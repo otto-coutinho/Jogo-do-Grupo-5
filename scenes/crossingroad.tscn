@@ -7,11 +7,11 @@
 [ext_resource path="res://sprites/Client.png" type="Texture" id=5]
 [ext_resource path="res://scenes/Personagem.gd" type="Script" id=6]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9, 19.5 )
-
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 37.75, 55.75 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9, 19.5 )
 
 [node name="crossingroad" type="Node2D"]
 
@@ -53,6 +53,18 @@ position = Vector2( 314.5, 179.5 )
 scale = Vector2( 0.418089, 0.34252 )
 texture = ExtResource( 3 )
 
+[node name="Area2D" type="Area2D" parent="mapa"]
+position = Vector2( -3, 0 )
+
+[node name="casa" type="Sprite" parent="mapa/Area2D"]
+position = Vector2( 80, 64 )
+scale = Vector2( 0.322917, 0.385417 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/Area2D"]
+position = Vector2( 79.25, 49.75 )
+shape = SubResource( 2 )
+
 [node name="Personagem" type="KinematicBody2D" parent="mapa"]
 position = Vector2( 108, 582 )
 script = ExtResource( 6 )
@@ -65,17 +77,5 @@ shape = SubResource( 1 )
 position = Vector2( 77, 32 )
 scale = Vector2( 0.28, 0.177798 )
 texture = ExtResource( 4 )
-
-[node name="Area2D" type="Area2D" parent="mapa"]
-position = Vector2( -3, 0 )
-
-[node name="casa" type="Sprite" parent="mapa/Area2D"]
-position = Vector2( 80, 64 )
-scale = Vector2( 0.322917, 0.385417 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/Area2D"]
-position = Vector2( 79.25, 49.75 )
-shape = SubResource( 2 )
 
 [connection signal="body_entered" from="mapa/Area2D" to="mapa/Personagem" method="_on_Area2D_body_entered"]
