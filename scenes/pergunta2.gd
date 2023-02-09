@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_RESPOSTA3_pressed():
-	get_tree().change_scene("res://scenes/Menu.tscn")
+	get_tree().change_scene("res://scenes/acertou.tscn")

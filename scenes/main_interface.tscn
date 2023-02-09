@@ -14,7 +14,7 @@ corner_radius_bottom_left = 100
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 189, 334.5 )
+position = Vector2( 177, 336 )
 scale = Vector2( 0.45, 0.644472 )
 texture = ExtResource( 1 )
 
@@ -48,5 +48,16 @@ rect_pivot_offset = Vector2( 100, 0 )
 custom_styles/normal = SubResource( 1 )
 text = "3"
 
+[node name="Button4" type="Button" parent="."]
+anchor_right = 0.11
+margin_left = 23.0
+margin_top = 564.0
+margin_right = 84.0
+margin_bottom = 628.0
+rect_pivot_offset = Vector2( 100, 0 )
+custom_styles/normal = SubResource( 1 )
+text = "Voltar"
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]

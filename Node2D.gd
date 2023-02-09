@@ -17,12 +17,4 @@ func _ready():
 
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://bricksgame/scenes/Level one.tscn")
-
-
-func _on_Button2_pressed():
-	get_tree().change_scene("res://scenes/crossingroad.tscn")
-
-
-func _on_Button4_pressed():
-	get_tree().change_scene("res://scenes/Menu.tscn")
+	get_tree().change_scene("res://scenes/main_interface.tscn")
