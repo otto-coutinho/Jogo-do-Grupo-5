@@ -160,4 +160,9 @@ texture = ExtResource( 8 )
 position = Vector2( 0, -1.57813 )
 shape = SubResource( 3 )
 
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_right = 360.0
+margin_bottom = 639.0
+columns = 15
+
 [connection signal="body_entered" from="mapa/Area2D" to="mapa/Personagem" method="_on_Area2D_body_entered"]
