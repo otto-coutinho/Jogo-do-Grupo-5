@@ -1,13 +1,11 @@
 extends Area2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var speed = 100
 
+func _process(delta):
+	position. x -= speed * delta 
+	
+	if position. x < 0:
+		position. x = get_viewport().size.x
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-func _

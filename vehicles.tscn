@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprite.gd" type="Script" id=1]
+[ext_resource path="res://sprites/veiculo.png" type="Texture" id=2]
+
+[node name="vehicles" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 317, 349 )
+scale = Vector2( 0.419492, 0.538889 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
