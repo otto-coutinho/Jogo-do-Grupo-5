@@ -9,6 +9,8 @@ func _process(delta):
 	
 	if position.x < -get_viewport().size.x:
 		yield(get_tree().create_timer(temp), "timeout")
-		position.x = 380
+		position.x = 400
+		
+		
 		
 		
