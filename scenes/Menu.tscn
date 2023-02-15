@@ -63,18 +63,18 @@ stream = ExtResource( 9 )
 
 [node name="TextureButton" type="TextureButton" parent="."]
 margin_left = 14.2293
-margin_top = 127.285
+margin_top = 131.142
 margin_right = 386.229
-margin_bottom = 281.285
+margin_bottom = 285.142
 rect_scale = Vector2( 0.0997728, 0.270982 )
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 4 )
 
 [node name="TextureButton3" type="TextureButton" parent="."]
 margin_left = 14.2293
-margin_top = 185.142
+margin_top = 188.999
 margin_right = 386.229
-margin_bottom = 339.142
+margin_bottom = 342.999
 rect_scale = Vector2( 0.0997728, 0.270982 )
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 5 )

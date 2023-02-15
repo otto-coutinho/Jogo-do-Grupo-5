@@ -1,59 +1,89 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://sprites/map.png" type="Texture" id=1]
 [ext_resource path="res://sprites/Road.png" type="Texture" id=2]
 [ext_resource path="res://sprites/Road 2.png" type="Texture" id=3]
 [ext_resource path="res://sprites/personagem.png" type="Texture" id=4]
-[ext_resource path="res://Client.png" type="Texture" id=5]
-[ext_resource path="res://scenes/Personagem.gd" type="Script" id=6]
-[ext_resource path="res://sprites/veiculo.png" type="Texture" id=8]
-[ext_resource path="res://scenes/carro esquerda.gd" type="Script" id=10]
+[ext_resource path="res://sprites/Client.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 37.75, 55.75 )
 
+[sub_resource type="GDScript" id=3]
+script/source = "extends KinematicBody2D
+
+var speed = 9000
+#velocidade de movimento do personagem
+var move = Vector2()
+#define o movimento em 2 eixos
+
+func _physics_process(delta):
+#da inicio a fsica do jogo
+	
+	#controles do personagem
+	if Input.is_action_pressed(\"ui_right\"):
+		move.x = speed * delta
+	elif Input.is_action_pressed(\"ui_left\"):
+		move.x = -speed * delta
+	elif Input.is_action_pressed(\"ui_up\"):
+		move.y = -speed  * delta
+	elif Input.is_action_pressed(\"ui_down\"):
+		move.y = speed  * delta
+	else:
+		move.x = 0
+		move.y = 0
+
+	move_and_slide(move)
+	
+func _process(delta):
+		if position.x < -get_viewport().size.x:
+			position.x = get_viewport().size.x
+		
+func _on_casa_body_entered(body):
+	get_tree().change_scene(\"res://scenes/pergunta2.tscn\")
+"
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9, 19.5 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 30, 16.4219 )
 
 [node name="crossingroad" type="Node2D"]
 
 [node name="mapa" type="Node" parent="."]
 
-[node name="grama" type="Sprite" parent="mapa"]
+[node name="ruas" type="Node" parent="mapa"]
+
+[node name="grama" type="Sprite" parent="mapa/ruas"]
 position = Vector2( 177.826, 317.667 )
 rotation = -1.56578
 scale = Vector2( 0.415095, 0.494661 )
 texture = ExtResource( 1 )
 
-[node name="rua" type="Sprite" parent="mapa"]
+[node name="rua" type="Sprite" parent="mapa/ruas"]
 position = Vector2( 88.5, 492.75 )
 scale = Vector2( 0.368852, 0.3875 )
 texture = ExtResource( 2 )
 
-[node name="rua2" type="Sprite" parent="mapa"]
+[node name="rua2" type="Sprite" parent="mapa/ruas"]
 position = Vector2( 304.5, 492.75 )
 scale = Vector2( 0.368852, 0.3875 )
 texture = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="mapa"]
+[node name="Sprite" type="Sprite" parent="mapa/ruas"]
 position = Vector2( 86.5001, 307.5 )
 scale = Vector2( 0.418089, 0.34252 )
 texture = ExtResource( 3 )
 
-[node name="Sprite2" type="Sprite" parent="mapa"]
+[node name="Sprite2" type="Sprite" parent="mapa/ruas"]
 position = Vector2( 326.5, 307.5 )
 scale = Vector2( 0.418089, 0.34252 )
 texture = ExtResource( 3 )
 
-[node name="Sprite3" type="Sprite" parent="mapa"]
+[node name="Sprite3" type="Sprite" parent="mapa/ruas"]
 position = Vector2( 74.5, 179.5 )
 scale = Vector2( 0.418089, 0.34252 )
 texture = ExtResource( 3 )
 
-[node name="Sprite4" type="Sprite" parent="mapa"]
+[node name="Sprite4" type="Sprite" parent="mapa/ruas"]
 position = Vector2( 314.5, 179.5 )
 scale = Vector2( 0.418089, 0.34252 )
 texture = ExtResource( 3 )
@@ -72,7 +102,7 @@ shape = SubResource( 2 )
 
 [node name="Personagem" type="KinematicBody2D" parent="mapa"]
 position = Vector2( 108, 582 )
-script = ExtResource( 6 )
+script = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/Personagem"]
 position = Vector2( 78, 32.5 )
@@ -82,82 +112,5 @@ shape = SubResource( 1 )
 position = Vector2( -1, -0.5 )
 scale = Vector2( 0.28, 0.177798 )
 texture = ExtResource( 4 )
-
-[node name="carrose" type="Node" parent="mapa"]
-
-[node name="carroe" type="KinematicBody2D" parent="mapa/carrose"]
-position = Vector2( 249, 450 )
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="mapa/carrose/carroe"]
-scale = Vector2( 0.447564, 0.441944 )
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/carrose/carroe"]
-position = Vector2( 0, -1.57813 )
-shape = SubResource( 3 )
-
-[node name="carroe2" type="KinematicBody2D" parent="mapa/carrose"]
-position = Vector2( 351, 448 )
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="mapa/carrose/carroe2"]
-scale = Vector2( 0.447564, 0.441944 )
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/carrose/carroe2"]
-position = Vector2( 0, -1.57813 )
-shape = SubResource( 3 )
-
-[node name="carroe3" type="KinematicBody2D" parent="mapa/carrose"]
-position = Vector2( 477, 448 )
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="mapa/carrose/carroe3"]
-scale = Vector2( 0.447564, 0.441944 )
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/carrose/carroe3"]
-position = Vector2( 0, -1.57813 )
-shape = SubResource( 3 )
-
-[node name="carroe4" type="KinematicBody2D" parent="mapa/carrose"]
-position = Vector2( 669, 446 )
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="mapa/carrose/carroe4"]
-scale = Vector2( 0.447564, 0.441944 )
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/carrose/carroe4"]
-position = Vector2( 0, -1.57813 )
-shape = SubResource( 3 )
-
-[node name="carroe5" type="KinematicBody2D" parent="mapa/carrose"]
-position = Vector2( 759, 444 )
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="mapa/carrose/carroe5"]
-scale = Vector2( 0.447564, 0.441944 )
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/carrose/carroe5"]
-position = Vector2( 0, -1.57813 )
-shape = SubResource( 3 )
 
 [connection signal="body_entered" from="mapa/casa" to="mapa/Personagem" method="_on_casa_body_entered"]

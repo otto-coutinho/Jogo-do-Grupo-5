@@ -10,3 +10,7 @@ func _process(delta):
 	if position.x < -get_viewport().size.x:
 		yield(get_tree().create_timer(temp), "timeout")
 		position.x = 400
+
+
+func _on_Area2D_body_entered(body):
+	get_tree().reload_current_scene()
