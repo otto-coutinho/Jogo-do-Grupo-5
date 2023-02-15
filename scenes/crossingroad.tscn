@@ -58,15 +58,15 @@ position = Vector2( 314.5, 179.5 )
 scale = Vector2( 0.418089, 0.34252 )
 texture = ExtResource( 3 )
 
-[node name="Area2D" type="Area2D" parent="mapa"]
+[node name="casa" type="Area2D" parent="mapa"]
 position = Vector2( -3, 0 )
 
-[node name="casa" type="Sprite" parent="mapa/Area2D"]
+[node name="casa" type="Sprite" parent="mapa/casa"]
 position = Vector2( 80, 64 )
 scale = Vector2( 0.322917, 0.385417 )
 texture = ExtResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/casa"]
 position = Vector2( 79.25, 49.75 )
 shape = SubResource( 2 )
 
@@ -78,91 +78,86 @@ script = ExtResource( 6 )
 position = Vector2( 78, 32.5 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="mapa/Personagem"]
-position = Vector2( 77, 32 )
+[node name="Sprite" type="Sprite" parent="mapa/Personagem/CollisionShape2D"]
+position = Vector2( -1, -0.5 )
 scale = Vector2( 0.28, 0.177798 )
 texture = ExtResource( 4 )
 
-[node name="carros esquerda" type="Node" parent="mapa"]
+[node name="carrose" type="Node" parent="mapa"]
 
-[node name="carro esquerda3" type="KinematicBody2D" parent="mapa/carros esquerda"]
+[node name="carroe" type="KinematicBody2D" parent="mapa/carrose"]
 position = Vector2( 249, 450 )
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="mapa/carros esquerda/carro esquerda3"]
+[node name="Sprite" type="Sprite" parent="mapa/carrose/carroe"]
 scale = Vector2( 0.447564, 0.441944 )
 texture = ExtResource( 8 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/carros esquerda/carro esquerda3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/carrose/carroe"]
 position = Vector2( 0, -1.57813 )
 shape = SubResource( 3 )
 
-[node name="carro esquerda4" type="KinematicBody2D" parent="mapa/carros esquerda"]
+[node name="carroe2" type="KinematicBody2D" parent="mapa/carrose"]
 position = Vector2( 351, 448 )
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="mapa/carros esquerda/carro esquerda4"]
+[node name="Sprite" type="Sprite" parent="mapa/carrose/carroe2"]
 scale = Vector2( 0.447564, 0.441944 )
 texture = ExtResource( 8 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/carros esquerda/carro esquerda4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/carrose/carroe2"]
 position = Vector2( 0, -1.57813 )
 shape = SubResource( 3 )
 
-[node name="carro esquerda5" type="KinematicBody2D" parent="mapa/carros esquerda"]
+[node name="carroe3" type="KinematicBody2D" parent="mapa/carrose"]
 position = Vector2( 477, 448 )
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="mapa/carros esquerda/carro esquerda5"]
+[node name="Sprite" type="Sprite" parent="mapa/carrose/carroe3"]
 scale = Vector2( 0.447564, 0.441944 )
 texture = ExtResource( 8 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/carros esquerda/carro esquerda5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/carrose/carroe3"]
 position = Vector2( 0, -1.57813 )
 shape = SubResource( 3 )
 
-[node name="carro esquerda7" type="KinematicBody2D" parent="mapa/carros esquerda"]
+[node name="carroe4" type="KinematicBody2D" parent="mapa/carrose"]
 position = Vector2( 669, 446 )
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="mapa/carros esquerda/carro esquerda7"]
+[node name="Sprite" type="Sprite" parent="mapa/carrose/carroe4"]
 scale = Vector2( 0.447564, 0.441944 )
 texture = ExtResource( 8 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/carros esquerda/carro esquerda7"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/carrose/carroe4"]
 position = Vector2( 0, -1.57813 )
 shape = SubResource( 3 )
 
-[node name="carro esquerda8" type="KinematicBody2D" parent="mapa/carros esquerda"]
+[node name="carroe5" type="KinematicBody2D" parent="mapa/carrose"]
 position = Vector2( 759, 444 )
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="mapa/carros esquerda/carro esquerda8"]
+[node name="Sprite" type="Sprite" parent="mapa/carrose/carroe5"]
 scale = Vector2( 0.447564, 0.441944 )
 texture = ExtResource( 8 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/carros esquerda/carro esquerda8"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/carrose/carroe5"]
 position = Vector2( 0, -1.57813 )
 shape = SubResource( 3 )
 
-[node name="GridContainer" type="GridContainer" parent="."]
-margin_right = 360.0
-margin_bottom = 639.0
-columns = 15
-
-[connection signal="body_entered" from="mapa/Area2D" to="mapa/Personagem" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="mapa/casa" to="mapa/Personagem" method="_on_casa_body_entered"]

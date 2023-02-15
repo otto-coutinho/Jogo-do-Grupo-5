@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var speed = 100
+var speed = 9000
 #velocidade de movimento do personagem
 var move = Vector2()
 #define o movimento em 2 eixos
@@ -10,18 +10,22 @@ func _physics_process(delta):
 	
 	#controles do personagem
 	if Input.is_action_pressed("ui_right"):
-		move.x = speed
+		move.x = speed * delta
 	elif Input.is_action_pressed("ui_left"):
-		move.x = -speed
+		move.x = -speed * delta
 	elif Input.is_action_pressed("ui_up"):
-		move.y = -speed
+		move.y = -speed  * delta
 	elif Input.is_action_pressed("ui_down"):
-		move.y = speed
+		move.y = speed  * delta
 	else:
 		move.x = 0
 		move.y = 0
 
 	move_and_slide(move)
-
-func _on_Area2D_body_entered(body):
+	
+func _process(delta):
+		if position.x < -get_viewport().size.x:
+			position.x = get_viewport().size.x
+		
+func _on_casa_body_entered(body):
 	get_tree().change_scene("res://scenes/pergunta2.tscn")
