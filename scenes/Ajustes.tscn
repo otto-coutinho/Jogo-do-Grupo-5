@@ -10,3 +10,12 @@ script = ExtResource( 1 )
 position = Vector2( 180, 320 )
 scale = Vector2( -1.6, 1.6 )
 texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 64.0
+margin_right = 88.0
+margin_bottom = 104.0
+text = "Retorno"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
