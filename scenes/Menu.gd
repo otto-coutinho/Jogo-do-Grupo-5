@@ -6,3 +6,5 @@ func _ready():
 
 func _on_TextureButton_pressed():
 	get_tree().change_scene("res://scenes/conversa 1.tscn")
+func _on_TextureButton3_pressed():
+	get_tree().change_scene("res://scenes/Ajustes.tscn")

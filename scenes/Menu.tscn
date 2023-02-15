@@ -80,3 +80,4 @@ texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 5 )
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="TextureButton3" to="." method="_on_TextureButton3_pressed"]
