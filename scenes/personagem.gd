@@ -26,7 +26,7 @@ func _physics_process(delta):
 	var collision = move_and_collide(move * delta)
 	
 	if collision:
-		get_tree().change_scene("res://scenes/pergunta2.tscn")
+		get_tree().reload_current_scene()
 	
 func _process(delta):
 		if position.x < -get_viewport().size.x:
