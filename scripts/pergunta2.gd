@@ -15,6 +15,6 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
+# Botão com a resposta certa
 func _on_RESPOSTA3_pressed():
 	get_tree().change_scene("res://scenes/acertou.tscn")
