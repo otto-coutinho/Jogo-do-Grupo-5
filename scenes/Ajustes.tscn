@@ -12,10 +12,10 @@ scale = Vector2( -1.6, 1.6 )
 texture = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = 8.0
-margin_top = 64.0
-margin_right = 88.0
-margin_bottom = 104.0
+margin_left = 248.0
+margin_top = 568.0
+margin_right = 328.0
+margin_bottom = 608.0
 text = "Retorno"
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
