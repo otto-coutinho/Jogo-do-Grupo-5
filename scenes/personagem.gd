@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var speed = 9000
+var speed = 9000 * 0.9
 #velocidade de movimento do personagem
 var move = Vector2()
 #define o movimento em 2 eixos
@@ -31,6 +31,10 @@ func _physics_process(delta):
 func _process(delta):
 		if position.x < -get_viewport().size.x:
 			position.x = get_viewport().size.x
+		if position.y > (get_viewport().size.y) - 30:
+			position.y = 610
+		elif position.y == 30:
+			position.y = 30
 		
 func _on_casa_body_entered(body):
 	get_tree().change_scene("res://scenes/pergunta2.tscn")
