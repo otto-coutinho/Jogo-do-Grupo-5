@@ -12,19 +12,23 @@
 extents = Vector2( 37.75, 55.75 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9, 19.5 )
+extents = Vector2( 11, 21.75 )
 
 [node name="crossingroad" type="Node2D"]
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="mapa" type="Node" parent="."]
 
 [node name="ruas" type="Node" parent="mapa"]
 
 [node name="grama" type="Sprite" parent="mapa/ruas"]
-position = Vector2( 177.826, 317.667 )
+position = Vector2( 178.907, 318.207 )
 rotation = -1.56578
-scale = Vector2( 0.415095, 0.494661 )
+scale = Vector2( 0.415781, 0.497589 )
 z_as_relative = false
 texture = ExtResource( 1 )
 
@@ -77,6 +81,8 @@ shape = SubResource( 2 )
 
 [node name="Personagem" type="KinematicBody2D" parent="mapa"]
 position = Vector2( 108, 582 )
+collision_layer = 65535
+collision_mask = 65535
 script = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="mapa/Personagem"]
@@ -85,7 +91,7 @@ scale = Vector2( 0.28, 0.177798 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/Personagem"]
-position = Vector2( 79, 33 )
+position = Vector2( 79, 35 )
 shape = SubResource( 1 )
 
 [connection signal="body_entered" from="mapa/casa" to="mapa/Personagem" method="_on_casa_body_entered"]
