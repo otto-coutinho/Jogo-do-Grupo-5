@@ -6,7 +6,7 @@ var move = Vector2()
 
 
 func _ready():
-	set_position(Vector2(-250, 220))
+	set_position(Vector2(-250, 10))
 	# Coloca a sprite do carro acima das outras
 	set_z_index(1)
 
