@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/fase 2/dialogo.gd" type="Script" id=1]
+[ext_resource path="res://sprites/Imagem PNG.png" type="Texture" id=2]
+[ext_resource path="res://sprites/roberto.png" type="Texture" id=3]
+[ext_resource path="res://sprites/personagem.png" type="Texture" id=4]
+
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 80.0
+margin_top = 86.0
+margin_right = 289.0
+margin_bottom = 373.0
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 1 )
+dialogPath = "res://dialogo0.json"
+
+[node name="Alex" type="Sprite" parent="ColorRect"]
+position = Vector2( 185, 469 )
+scale = Vector2( 0.60125, 0.547834 )
+texture = ExtResource( 4 )
+
+[node name="PersonagemVtal" type="Sprite" parent="ColorRect"]
+position = Vector2( -2, 464 )
+scale = Vector2( 0.691667, 0.6125 )
+texture = ExtResource( 3 )
+
+[node name="balaodefalaVtal" type="Sprite" parent="ColorRect"]
+position = Vector2( 100, 193 )
+z_index = -1
+texture = ExtResource( 2 )
+
+[node name="balaodefalaAlex" type="Sprite" parent="ColorRect"]
+position = Vector2( 109, 197 )
+scale = Vector2( -0.959788, 0.994727 )
+z_index = -1
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="ColorRect"]
+margin_left = 153.0
+margin_top = 491.0
+margin_right = 270.0
+margin_bottom = 551.0
+text = "Enter"
+
+[node name="Name" type="RichTextLabel" parent="ColorRect"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 192.0
+margin_bottom = 45.0
+
+[node name="Text" type="RichTextLabel" parent="ColorRect"]
+margin_left = 12.0
+margin_top = 169.0
+margin_right = 197.0
+margin_bottom = 268.0
+
+[node name="Timer" type="Timer" parent="ColorRect"]
+
+[connection signal="pressed" from="ColorRect/Button" to="ColorRect" method="_on_Button_pressed"]
