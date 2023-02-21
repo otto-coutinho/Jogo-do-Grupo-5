@@ -10,11 +10,19 @@ var car2
 var car_scene_3 = preload("res://scenes/fase 2/carro3.tscn")
 var car3
 
+var car_scene_4 = preload("res://scenes/fase 2/carro4.tscn")
+var car4
+
+var car_scene_5 = preload("res://scenes/fase 2/carro5.tscn")
+var car5
+
 var timer_limit = 1000
 
-var random1 = 2
-var random2 = 2
+var random1 = 1
+var random2 = 1
 var random3 = 2
+var random4 = 2
+var random5 = 2
 
 # Create a timer node
 var timer = Timer.new()
@@ -27,6 +35,8 @@ func _ready():
 	timer.connect("timeout", self, "car_spaw_1")
 	timer.connect("timeout", self, "car_spaw_2")
 	timer.connect("timeout", self, "car_spaw_3")
+	timer.connect("timeout", self, "car_spaw_4")
+	timer.connect("timeout", self, "car_spaw_5")
 	
 	# Add to the tree as child of the current node
 	add_child(timer)
@@ -60,7 +70,21 @@ func car_spaw_3():
 	
 	# Set timer interval
 	timer.set_wait_time(random3)
+	
+func car_spaw_4():
+	car4 = car_scene_4.instance()
+	add_child(car4)
+	
+	random4 = rand_range(1, 3)
+	
+	# Set timer interval
+	timer.set_wait_time(random4)
 
-# Faz o carro andar tirando -1 valor da posição atual dele
-func _process(delta):
-	pass
+func car_spaw_5():
+	car5 = car_scene_5.instance()
+	add_child(car5)
+	
+	random5 = rand_range(5, 7)
+	
+	# Set timer interval
+	timer.set_wait_time(random5)

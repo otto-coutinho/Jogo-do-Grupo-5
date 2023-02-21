@@ -6,7 +6,7 @@ var move = Vector2()
 
 
 func _ready():
-	set_position(Vector2(-250, 220))
+	set_position(Vector2(250, -116))
 	# Coloca a sprite do carro acima das outras
 	set_z_index(1)
 
@@ -19,4 +19,4 @@ func _ready():
 
 # Faz o carro andar tirando -1 valor da posição atual dele
 func _process(delta):
-	position.x += 2.7
+	position.x -= 1.5

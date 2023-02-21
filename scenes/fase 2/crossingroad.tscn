@@ -1,24 +1,92 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://sprites/map.png" type="Texture" id=1]
 [ext_resource path="res://sprites/Road.png" type="Texture" id=2]
 [ext_resource path="res://sprites/Road 2.png" type="Texture" id=3]
-[ext_resource path="res://sprites/personagem.png" type="Texture" id=4]
-[ext_resource path="res://sprites/Client.png" type="Texture" id=5]
+[ext_resource path="res://sprites/sprite do personagem.png" type="Texture" id=4]
+[ext_resource path="res://sprites/casinha do balacobaco.png" type="Texture" id=5]
 [ext_resource path="res://scripts/fase 2/crossingroad_scene.gd" type="Script" id=6]
 [ext_resource path="res://scripts/fase 2/personagem.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 37.75, 55.75 )
+extents = Vector2( 61.875, 41.375 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11, 21.75 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "andar para direita"
+length = 0.65
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 12, 13, 14, 15 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "andar para esquerda"
+length = 0.65
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "andar para frente"
+length = 0.65
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "andar para trás"
+length = 0.65
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
 
 [node name="crossingroad" type="Node2D"]
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 292.0 ],
-"_edit_vertical_guides_": [ 334.0 ]
+"_edit_vertical_guides_": [ 334.0, -155.0 ]
 }
 
 [node name="mapa" type="Node" parent="."]
@@ -31,6 +99,9 @@ rotation = -1.56578
 scale = Vector2( 0.415781, 0.497589 )
 z_as_relative = false
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="rua" type="Sprite" parent="mapa/ruas"]
 position = Vector2( 88.5, 492.75 )
@@ -71,12 +142,12 @@ texture = ExtResource( 3 )
 position = Vector2( -3, 0 )
 
 [node name="casa" type="Sprite" parent="mapa/casa"]
-position = Vector2( 80, 64 )
-scale = Vector2( 0.322917, 0.385417 )
+position = Vector2( 99.6666, 77.6666 )
+scale = Vector2( 0.445834, 0.470833 )
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/casa"]
-position = Vector2( 77, 85 )
+position = Vector2( 101.125, 70.625 )
 shape = SubResource( 2 )
 
 [node name="Personagem" type="KinematicBody2D" parent="mapa"]
@@ -85,13 +156,23 @@ collision_layer = 65535
 collision_mask = 65535
 script = ExtResource( 7 )
 
-[node name="Sprite" type="Sprite" parent="mapa/Personagem"]
-position = Vector2( 79, 34 )
-scale = Vector2( 0.28, 0.177798 )
-texture = ExtResource( 4 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/Personagem"]
 position = Vector2( 79, 35 )
 shape = SubResource( 1 )
 
+[node name="Sprite" type="Sprite" parent="mapa/Personagem"]
+position = Vector2( 79, 30 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+hframes = 4
+vframes = 4
+frame = 13
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="mapa/Personagem"]
+"anims/andar para direita" = SubResource( 3 )
+"anims/andar para esquerda" = SubResource( 4 )
+"anims/andar para frente" = SubResource( 5 )
+"anims/andar para trás" = SubResource( 6 )
+
+[connection signal="area_shape_entered" from="mapa/casa" to="mapa/Personagem" method="_on_casa_area_shape_entered"]
 [connection signal="body_entered" from="mapa/casa" to="mapa/Personagem" method="_on_casa_body_entered"]

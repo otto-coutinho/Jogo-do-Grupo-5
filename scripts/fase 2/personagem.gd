@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # Velocidade de movimento do personagem
-var speed = 9000 * 3
+var speed = 4000
 # Define o movimento em 2 eixos
 var move = Vector2()
 
@@ -12,17 +12,22 @@ func _ready():
 func _physics_process(delta):
 	
 	# Controles do personagem
-	if Input.is_action_just_released("ui_right"):
+	if Input.is_action_pressed("ui_right"):
 		move.x = speed * delta
-	elif Input.is_action_just_released("ui_left"):
+		$AnimationPlayer.play("andar para direita")
+	elif Input.is_action_pressed("ui_left"):
 		move.x = -speed * delta
-	elif Input.is_action_just_released("ui_up"):
+		$AnimationPlayer.play("andar para esquerda")
+	elif Input.is_action_pressed("ui_up"):
 		move.y = -speed  * delta
-	elif Input.is_action_just_released("ui_down"):
+		$AnimationPlayer.play("andar para frente")
+	elif Input.is_action_pressed("ui_down"):
 		move.y = speed  * delta
+		$AnimationPlayer.play("andar para trás")
 	else:
 		move.x = 0
 		move.y = 0
+		$AnimationPlayer.stop()
 	
 	# Detecta colisões do personagem
 #	move_and_slide(move)
