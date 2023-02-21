@@ -1,8 +1,5 @@
 extends KinematicBody2D
 
-var speed = 100
-var temp = randf()
-
 func _ready():
 	set_position(Vector2(205, 185))
 	# Coloca a sprite do carro acima das outras

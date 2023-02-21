@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # Velocidade de movimento do personagem
-var speed = 4000
+var speed = 9000
 # Define o movimento em 2 eixos
 var move = Vector2()
 
@@ -51,5 +51,8 @@ func _process(delta):
 
 
 # Se o objeto toca a casa ele vence a fase 
+
+
 func _on_casa_body_entered(body):
 	get_tree().change_scene("res://scenes/pergunta2.tscn")
+	print("1")

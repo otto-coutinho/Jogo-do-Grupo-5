@@ -35,10 +35,10 @@ text = "1"
 
 [node name="Button2" type="Button" parent="."]
 anchor_right = 0.11
-margin_left = 256.0
-margin_top = 194.0
-margin_right = 304.0
-margin_bottom = 241.0
+margin_left = 239.0
+margin_top = 196.0
+margin_right = 287.0
+margin_bottom = 243.0
 rect_pivot_offset = Vector2( 100, 0 )
 custom_styles/normal = SubResource( 1 )
 text = "2"
