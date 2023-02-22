@@ -6,7 +6,7 @@ func _ready():
 
 # Botão de start para começar o jogo
 func _on_TextureButton_pressed():
-	get_tree().change_scene("res://scenes/menu/conversa 1.tscn")
+	get_tree().change_scene("res://Dialogos/dialogo_inicial.tscn")
 
 # Botão de ajustes
 func _on_TextureButton3_pressed():

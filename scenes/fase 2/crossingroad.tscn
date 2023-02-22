@@ -195,6 +195,4 @@ frame = 13
 "anims/andar para frente" = SubResource( 5 )
 "anims/andar para trás" = SubResource( 6 )
 
-[connection signal="area_entered" from="mapa/casa" to="mapa/Personagem" method="_on_casa_area_entered"]
-[connection signal="area_shape_entered" from="mapa/casa" to="mapa/Personagem" method="_on_casa_area_shape_entered"]
 [connection signal="body_entered" from="mapa/casa" to="mapa/Personagem" method="_on_casa_body_entered"]
