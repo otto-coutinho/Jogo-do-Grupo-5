@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Dialogos/dialogo_fase1.gd" type="Script" id=1]
-[ext_resource path="res://sprites/roberto.png" type="Texture" id=2]
-[ext_resource path="res://sprites/personagem.png" type="Texture" id=3]
-[ext_resource path="res://sprites/Imagem PNG.png" type="Texture" id=4]
+[ext_resource path="res://Dialogos/dialogo_fase1_1.gd" type="Script" id=1]
+[ext_resource path="res://sprites/Imagem PNG.png" type="Texture" id=2]
+[ext_resource path="res://sprites/roberto.png" type="Texture" id=3]
+[ext_resource path="res://sprites/personagem.png" type="Texture" id=4]
 [ext_resource path="res://sprites/city background.jpg" type="Texture" id=5]
 
 [node name="Control" type="Control"]
@@ -22,29 +22,29 @@ margin_top = 164.0
 margin_right = 224.0
 margin_bottom = 164.0
 script = ExtResource( 1 )
-dialogPath = "res://Dialogos/dialogo_fase1.json"
+dialogPath = "res://Dialogos/dialogo_fase1_1.json"
 
 [node name="Alex" type="Sprite" parent="ColorRect"]
 position = Vector2( 50, 276 )
 scale = Vector2( 0.60125, 0.547834 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="PersonagemVtal" type="Sprite" parent="ColorRect"]
 position = Vector2( -159, 282 )
 scale = Vector2( 0.691667, 0.6125 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="balaodefalaVtal" type="Sprite" parent="ColorRect"]
 position = Vector2( -57, 64.5 )
 scale = Vector2( 1.12414, 0.634 )
 z_index = -1
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 
 [node name="balaodefalaAlex" type="Sprite" parent="ColorRect"]
 position = Vector2( -52, 59 )
 scale = Vector2( -1.12947, 0.650685 )
 z_index = -1
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="ColorRect"]
 margin_left = -23.0

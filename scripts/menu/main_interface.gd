@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_Button_pressed():
-	pass
+	get_tree().change_scene("res://Dialogos/dialogo_fase1_1.tscn")
 
 # Botão para ir para a fase do crossingroad (fase3)
 func _on_Button2_pressed():

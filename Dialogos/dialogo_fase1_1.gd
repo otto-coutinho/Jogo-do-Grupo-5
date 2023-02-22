@@ -90,4 +90,4 @@ func nextPhrase() -> void:
 	return
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://scenes/fase 2/crossingroad.tscn")
+	get_tree().change_scene("res://scenes/fase 1/jogo.tscn")
