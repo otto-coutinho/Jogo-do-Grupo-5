@@ -19,4 +19,5 @@ func _ready():
 
 # Faz o carro andar tirando -1 valor da posição atual dele
 func _process(delta):
-	position.x += 2
+	position.x += 140 * delta
+	
