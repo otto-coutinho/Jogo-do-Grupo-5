@@ -28,6 +28,8 @@ func _physics_process(delta):
 		move.x = 0
 		move.y = 0
 		$AnimationPlayer.stop()
+		
+	
 	
 	# Detecta colisões do personagem
 #	move_and_slide(move)
