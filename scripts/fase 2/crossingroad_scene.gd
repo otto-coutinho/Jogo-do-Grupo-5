@@ -32,6 +32,7 @@ var timer4 = Timer.new()
 var timer5 = Timer.new()
 
 func _ready():
+	
 	# Set it as repeat
 	timer.set_one_shot(false)
 	timer2.set_one_shot(false)
@@ -67,7 +68,7 @@ func car_spaw_1():
 	car = car_scene.instance()
 	add_child(car)
 	
-	random1 = rand_range(1, 3)
+	random1 = rand_range(3, 5)
 	
 	# Set timer interval
 	timer.set_wait_time(random1)
@@ -76,7 +77,7 @@ func car_spaw_2():
 	car2 = car_scene_2.instance()
 	add_child(car2)
 	
-	random2 = rand_range(1, 3)
+	random2 = rand_range(3, 5)
 	
 	# Set timer interval
 	timer2.set_wait_time(random2)
@@ -85,7 +86,7 @@ func car_spaw_3():
 	car3 = car_scene_3.instance()
 	add_child(car3)
 
-	random3 = rand_range(1, 3)
+	random3 = rand_range(3, 5)
 
 	# Set timer interval
 	timer3.set_wait_time(random3)
@@ -94,7 +95,7 @@ func car_spaw_4():
 	car4 = car_scene_4.instance()
 	add_child(car4)
 	
-	random4 = rand_range(1, 3)
+	random4 = rand_range(3, 5)
 	
 	# Set timer interval
 	timer4.set_wait_time(random4)
@@ -107,3 +108,8 @@ func car_spaw_4():
 #
 #	# Set timer interval
 #	timer5.set_wait_time(random5)
+
+func _process(delta):
+	# Bloqueia o movimento do personagem além dos limites da tela
+	if $mapa/Personagem.position.x > 360 or $mapa/Personagem.position.x == 0 or $mapa/Personagem.position.y == 0 or $mapa/Personagem.position.y == 640:
+		 $mapa/Personagem.set_position(180, 610)

@@ -39,17 +39,9 @@ func _physics_process(delta):
 
 	
 func _process(delta):
-	# Bloqueia o movimento do personagem além dos limites da tela
-	if position.x > 300:
-		set_position(Vector2(108,582))
-	elif position.x < -150:
-		set_position(Vector2(108,582))
-	if position.y < 0:
-		set_position(Vector2(108,582))
-	elif position.y < -640:
-		set_position(Vector2(108,582))
+	pass
 
 
 # Se o objeto toca a casa ele vence a fase 
 func _on_casa_body_entered(body):
-	get_tree().change_scene("res://scenes/pergunta2.tscn")
+	get_tree().change_scene("res://Dialogos/dialogo_fase2_2.tscn")

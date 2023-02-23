@@ -69,7 +69,7 @@ func _process(delta):
 	
 	#Passou de fase
 	if correct == 8:
-		print("passou")
+		get_tree().change_scene("res://scenes/fase 2/pergunta2.tscn")
 		
 	#Garante que os fios sejam apertados na ordem correta
 	if connected.size() == 2:

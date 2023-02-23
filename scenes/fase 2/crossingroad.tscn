@@ -19,7 +19,7 @@ resource_name = "andar para direita"
 length = 0.65
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("../Personagem/Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -36,7 +36,7 @@ resource_name = "andar para esquerda"
 length = 0.65
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("../Personagem/Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -53,7 +53,7 @@ resource_name = "andar para frente"
 length = 0.65
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("../Personagem/Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -70,7 +70,7 @@ resource_name = "andar para trás"
 length = 0.65
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("../Personagem/Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -172,17 +172,15 @@ position = Vector2( 99, 77 )
 shape = SubResource( 2 )
 
 [node name="Personagem" type="KinematicBody2D" parent="mapa"]
-position = Vector2( 108, 582 )
-collision_layer = 65535
-collision_mask = 65535
+position = Vector2( 180, 610 )
 script = ExtResource( 7 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/Personagem"]
-position = Vector2( 79, 35 )
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="mapa/Personagem"]
+position = Vector2( 0, 2 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="mapa/Personagem"]
-position = Vector2( 79, 30 )
+position = Vector2( 2, -2 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
 hframes = 4
