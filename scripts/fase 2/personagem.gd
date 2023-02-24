@@ -5,9 +5,6 @@ var speed = 4000
 # Define o movimento em 2 eixos
 var move = Vector2()
 
-func _ready():
-	_process(true)
-
 # Inicia a fsica do jogo
 func _physics_process(delta):
 	
@@ -38,11 +35,7 @@ func _physics_process(delta):
 	# Se houver uma colisão a cena reinicia
 	if collision:
 		get_tree().reload_current_scene()
-
-	
-func _process(delta):
-	pass
-
+		print(collision.collider.name)
 
 # Se o objeto toca a casa ele vence a fase 
 func _on_casa_body_entered(body):
