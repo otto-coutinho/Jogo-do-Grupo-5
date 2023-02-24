@@ -5,4 +5,4 @@ func _ready():
 
 # Botão com a resposta certa
 func _on_RESPOSTA3_pressed():
-	get_tree().change_scene("res://scenes/fase 2/Dialogos fase 3/dialogo_fase2_2.tscn")
+	get_tree().change_scene("res://scenes/menu/main_interface.tscn")

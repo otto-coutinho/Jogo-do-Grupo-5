@@ -10,9 +10,6 @@ func _ready():
 	set_position(Vector2(250, -110))
 	# Coloca a sprite do carro acima das outras
 	set_z_index(1)
-	var aleatorio = pos[randi() % pos.size()]
-	print(aleatorio)
-	
 
 #func _physics_process(delta):
 #	var collision = move_and_collide(move)

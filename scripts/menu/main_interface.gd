@@ -21,7 +21,7 @@ func _on_Button_pressed():
 
 # Botão para ir para a fase do crossingroad (fase3)
 func _on_Button2_pressed():
-	get_tree().change_scene("res://Dialogos/dialogo_fase2.tscn")
+	get_tree().change_scene("res://scenes/fase 2/Dialogos fase 3/dialogo_fase2.tscn")
 
 # Botão para voltar para o menu
 func _on_Button4_pressed():

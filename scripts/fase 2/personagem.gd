@@ -46,4 +46,4 @@ func _process(delta):
 
 # Se o objeto toca a casa ele vence a fase 
 func _on_casa_body_entered(body):
-	get_tree().change_scene("res://Dialogos/dialogo_fase2_2.tscn")
+	get_tree().change_scene("res://scenes/fase 2/pergunta2.tscn")

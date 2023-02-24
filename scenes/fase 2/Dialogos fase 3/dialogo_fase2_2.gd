@@ -72,7 +72,7 @@ func nextPhrase() -> void:
 		
 		$Alex.visible = 1
 		$balaodefalaAlex.visible = 1
-	elif $Name.bbcode_text == "Rodrigo":
+	elif $Name.bbcode_text == "Funcionário da Vtal":
 		$Alex.visible = 0
 		$balaodefalaAlex.visible = 0
 		
@@ -90,4 +90,4 @@ func nextPhrase() -> void:
 	return
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://scenes/fase 2/crossingroad.tscn")
+	get_tree().change_scene("res://scenes/fase 2/Fase fios.tscn")
