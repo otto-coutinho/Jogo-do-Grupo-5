@@ -1,6 +1,6 @@
 extends Node2D
 
-# Carrega a cena que está o carro
+# Carrega as cenas que estão os carros que aparecem na rua
 var carScene = preload("res://scenes/fase 2/carro.tscn")
 var car
 
@@ -16,15 +16,17 @@ var car4
 var carScene5 = preload("res://scenes/fase 2/carro5.tscn")
 var car5
 
+# Limite do timer
 var timer_limit = 1000
 
+# Variáveis para gerar valores aleatorios do tempo que os carros surgem na tela
 var random1 = 1
 var random2 = 1
 var random3 = 2
 var random4 = 2
 var random5 = 2
 
-# Create a timer node
+# Variáveis para criação a node do de timer para cada carro
 var timer = Timer.new()
 var timer2 = Timer.new()
 var timer3 = Timer.new()
@@ -33,21 +35,22 @@ var timer5 = Timer.new()
 
 func _ready():
 	
-	# Set it as repeat
+	# Setar o timer para dar loop
 	timer.set_one_shot(false)
 	timer2.set_one_shot(false)
 	timer3.set_one_shot(false)
 	timer4.set_one_shot(false)
 	timer5.set_one_shot(false)
 
-	# Connect its timeout signal to the function you want to repeat
+	# Conecte seu o de timeout à função que deseja repetir
+	# Quando o tempo determinado acabar (timeout) a função reinicia
 	timer.connect("timeout", self, "car_spaw_1")
 	timer2.connect("timeout", self, "car_spaw_2")
 	timer3.connect("timeout", self, "car_spaw_3")
 	timer4.connect("timeout", self, "car_spaw_4")
 	timer5.connect("timeout", self, "car_spaw_5")
 	
-	# Add to the tree as child of the current node
+	# Adicionar à árvore como filho do nó atual
 	add_child(timer)
 	timer.start()
 	
@@ -60,16 +63,18 @@ func _ready():
 	add_child(timer4)
 	timer4.start()
 
-# Faz a instancia da cena do carro nessa cena
+# Faz a instancia (adiciona) da cena do carro 1 nessa cena
 func car_spaw_1():
 	car = carScene.instance()
 	add_child(car)
 	
+	# Cria um valor aleatório para o tempo
 	random1 = rand_range(3, 5)
 	
-	# Set timer interval
+	# Determina o valor aleatório criado acima como o intervalo de tempo para o carro aparecer
 	timer.set_wait_time(random1)
 
+# Faz a instancia (adiciona) da cena do carro 2 nessa cena
 func car_spaw_2():
 	car2 = carScene2.instance()
 	add_child(car2)
@@ -79,6 +84,7 @@ func car_spaw_2():
 	# Set timer interval
 	timer2.set_wait_time(random2)
 
+# Faz a instancia (adiciona) da cena do carro 3 nessa cena
 func car_spaw_3():
 	car3 = carScene3.instance()
 	add_child(car3)
@@ -87,7 +93,8 @@ func car_spaw_3():
 
 	# Set timer interval
 	timer3.set_wait_time(random3)
-	
+
+# Faz a instancia (adiciona) da cena do carro 4 nessa cena
 func car_spaw_4():
 	car4 = carScene4.instance()
 	add_child(car4)

@@ -12,7 +12,9 @@ var botao = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# Determina velocidaede que o texto aparece na tela
 	$Timer.wait_time = textSpeed
+	# Se o diálogo não for encontrado retrona essa mensagem
 	dialog = getDialog()
 	assert(dialog, "Dialog not found")
 	nextPhrase()
@@ -21,12 +23,14 @@ func _ready():
 
 
 func _process(delta):
+	# Se for precisonado enter o texto avança e vai para a próxima frase
 	if Input.is_action_just_pressed("ui_accept"):
 		if finished:
 			nextPhrase()
 		else:
 			$Text.visible_characters = len($Text.text)
 	
+	# O botão para continuar depois do diálogo só aparece depois que acabar todo diálogo
 	if botao == true:
 		$Button.visible = true
 	
@@ -66,6 +70,7 @@ func nextPhrase() -> void:
 	
 	$Text.visible_characters = 0
 	
+	# Código para alterar as sprites de fala do balão e personagem que estiver falando
 	if $Name.bbcode_text == "Alex":
 		$PersonagemVtal.visible = 0
 		$balaodefalaVtal.visible = 0
@@ -79,6 +84,7 @@ func nextPhrase() -> void:
 		$PersonagemVtal.visible = 1
 		$balaodefalaVtal.visible = 1
 	
+	# Enquanto tiver texto o código vai mostrando mais um carácter
 	while $Text.visible_characters < len($Text.text):
 		$Text.visible_characters += 1
 		
@@ -89,5 +95,6 @@ func nextPhrase() -> void:
 	phraseNum += 1
 	return
 
+# Quando o diálogo for finalizado o botão leva para a fase 2
 func _on_Button_pressed():
 	get_tree().change_scene("res://scenes/fase 2/Fase fios.tscn")

@@ -10,17 +10,20 @@ var phraseNum = 0
 var finished = false
 var botao = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	# Determina velocidaede que o texto aparece na tela
 	$Timer.wait_time = textSpeed
 	dialog = getDialog()
+	# Se o diálogo não for encontrado retrona essa mensagem
 	assert(dialog, "Dialog not found")
 	nextPhrase()
 	
+	# O botão para continuar depois do diálogo só aparece depois que acabar todo diálogo
 	$Button.visible = false
 
 
 func _process(delta):
+	# Se for precisonado enter o texto avança e vai para a próxima frase
 	if Input.is_action_just_pressed("ui_accept"):
 		if finished:
 			nextPhrase()
@@ -32,7 +35,7 @@ func _process(delta):
 	
 
 func getDialog() -> Array:
-	# Check if the file of the dialogue exist
+	# Verifica se o arquivo do diálogo existe
 	var f = File.new()
 	# se a condição for falso retorna essa mensagem
 	assert(f.file_exists(dialogPath), "File path does not exist")
@@ -60,12 +63,13 @@ func nextPhrase() -> void:
 	# Mostra se o dialogo acabou
 	finished = false
 	
-	# Determinar o nome e texto em si do dialogo
+	# Determinar o nome e texto em si que irá ser mostrado na tela
 	$Name.bbcode_text = dialog[phraseNum]["Name"]
 	$Text.bbcode_text = dialog[phraseNum]["Text"]
 	
 	$Text.visible_characters = 0
 	
+	# Código para alterar as sprites de fala do balão e personagem que estiver falando
 	if $Name.bbcode_text == "Alex":
 		$PersonagemVtal.visible = 0
 		$balaodefalaVtal.visible = 0
@@ -89,5 +93,6 @@ func nextPhrase() -> void:
 	phraseNum += 1
 	return
 
+# Quando o diálogo for finalizado o botão leva para o menu principal
 func _on_Button_pressed():
 	get_tree().change_scene("res://scenes/menu/main_interface.tscn")
