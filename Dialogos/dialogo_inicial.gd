@@ -21,14 +21,19 @@ func _ready():
 	# O botão para continuar depois do diálogo só aparece depois que acabar todo diálogo
 	$Button.visible = false
 
+var touch
+func _on_touch_pressed():
+	touch = true
 
 func _process(delta):
 	# Se for precisonado enter o texto avança e vai para a próxima frase
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") or touch:
 		if finished:
 			nextPhrase()
+			touch = false
 		else:
 			$Text.visible_characters = len($Text.text)
+			touch = false
 	
 	if botao == true:
 		$Button.visible = true
@@ -82,3 +87,5 @@ func nextPhrase() -> void:
 # Quando o diálogo for finalizado o botão leva para o menu principal
 func _on_Button_pressed():
 	get_tree().change_scene("res://scenes/menu/main_interface.tscn")
+
+

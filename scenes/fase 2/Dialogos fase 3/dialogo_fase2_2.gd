@@ -20,15 +20,20 @@ func _ready():
 	nextPhrase()
 	
 	$Button.visible = false
-
+	
+var touch
+func _on_touch_pressed():
+	touch = true
 
 func _process(delta):
 	# Se for precisonado enter o texto avança e vai para a próxima frase
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") or touch:
 		if finished:
 			nextPhrase()
+			touch = false
 		else:
 			$Text.visible_characters = len($Text.text)
+			touch = false
 	
 	# O botão para continuar depois do diálogo só aparece depois que acabar todo diálogo
 	if botao == true:
@@ -98,3 +103,5 @@ func nextPhrase() -> void:
 # Quando o diálogo for finalizado o botão leva para a fase 2
 func _on_Button_pressed():
 	get_tree().change_scene("res://scenes/fase 2/Fase fios.tscn")
+
+

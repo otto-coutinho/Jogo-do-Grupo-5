@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://sprites/map.png" type="Texture" id=1]
 [ext_resource path="res://sprites/Road.png" type="Texture" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://sprites/casinha do balacobaco.png" type="Texture" id=5]
 [ext_resource path="res://scripts/fase 2/crossingroad_scene.gd" type="Script" id=6]
 [ext_resource path="res://scripts/fase 2/personagem.gd" type="Script" id=7]
+[ext_resource path="res://sprites/esquerda.png" type="Texture" id=8]
+[ext_resource path="res://sprites/direita.png" type="Texture" id=9]
+[ext_resource path="res://sprites/cima.png" type="Texture" id=10]
+[ext_resource path="res://sprites/baixo.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 61.875, 41.375 )
@@ -156,6 +160,26 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="baixo" type="TouchScreenButton" parent="mapa/ruas"]
+position = Vector2( 242, 572 )
+scale = Vector2( 2.15625, 2.15625 )
+normal = ExtResource( 11 )
+
+[node name="direita" type="TouchScreenButton" parent="mapa/ruas"]
+position = Vector2( 295, 531 )
+scale = Vector2( 1.96875, 1.96875 )
+normal = ExtResource( 9 )
+
+[node name="esquerda" type="TouchScreenButton" parent="mapa/ruas"]
+position = Vector2( 193, 531 )
+scale = Vector2( 2.0453, 2.0453 )
+normal = ExtResource( 8 )
+
+[node name="cima" type="TouchScreenButton" parent="mapa/ruas"]
+position = Vector2( 241, 488 )
+scale = Vector2( 2.15625, 2.15625 )
+normal = ExtResource( 10 )
+
 [node name="casa" type="Area2D" parent="mapa"]
 position = Vector2( -3, 0 )
 __meta__ = {
@@ -185,7 +209,7 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
 hframes = 4
 vframes = 4
-frame = 13
+frame = 12
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="mapa/Personagem"]
 "anims/andar para direita" = SubResource( 3 )
@@ -193,4 +217,14 @@ frame = 13
 "anims/andar para frente" = SubResource( 5 )
 "anims/andar para trás" = SubResource( 6 )
 
+[connection signal="pressed" from="mapa/ruas/baixo" to="mapa/Personagem" method="_on_baixo_pressed"]
+[connection signal="released" from="mapa/ruas/baixo" to="mapa/Personagem" method="_on_baixo_released"]
+[connection signal="pressed" from="mapa/ruas/direita" to="." method="_on_direita_pressed"]
+[connection signal="pressed" from="mapa/ruas/direita" to="mapa/Personagem" method="_on_direita_pressed"]
+[connection signal="released" from="mapa/ruas/direita" to="." method="_on_direita_released"]
+[connection signal="released" from="mapa/ruas/direita" to="mapa/Personagem" method="_on_direita_released"]
+[connection signal="pressed" from="mapa/ruas/esquerda" to="mapa/Personagem" method="_on_esquerda_pressed"]
+[connection signal="released" from="mapa/ruas/esquerda" to="mapa/Personagem" method="_on_esquerda_released"]
+[connection signal="pressed" from="mapa/ruas/cima" to="mapa/Personagem" method="_on_cima_pressed"]
+[connection signal="released" from="mapa/ruas/cima" to="mapa/Personagem" method="_on_cima_released"]
 [connection signal="body_entered" from="mapa/casa" to="mapa/Personagem" method="_on_casa_body_entered"]

@@ -1,14 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/fase 2/Dialogos fase 3/dialogo_fase2.gd" type="Script" id=1]
 [ext_resource path="res://sprites/roberto.png" type="Texture" id=2]
 [ext_resource path="res://sprites/Imagem PNG.png" type="Texture" id=3]
 [ext_resource path="res://sprites/city background.jpg" type="Texture" id=4]
 [ext_resource path="res://sprites/personagem.png" type="Texture" id=5]
+[ext_resource path="res://sprites/invisivel.png" type="Texture" id=6]
 
 [node name="Control" type="Control"]
 margin_right = 40.0
 margin_bottom = 40.0
+
+[node name="touch" type="TouchScreenButton" parent="."]
+position = Vector2( -80, -104 )
+scale = Vector2( 0.453333, 0.895833 )
+normal = ExtResource( 6 )
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 182, 317 )
@@ -71,4 +77,6 @@ margin_bottom = 113.0
 
 [node name="Timer" type="Timer" parent="ColorRect"]
 
+[connection signal="pressed" from="touch" to="ColorRect" method="_on_touch_pressed"]
+[connection signal="released" from="touch" to="ColorRect" method="_on_touch_released"]
 [connection signal="pressed" from="ColorRect/Button" to="ColorRect" method="_on_Button_pressed"]

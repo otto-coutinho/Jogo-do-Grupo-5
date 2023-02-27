@@ -199,7 +199,7 @@ margin_left = 4.0
 margin_top = 5.0
 margin_right = 25.0
 margin_bottom = 25.0
-text = "40"
+text = "1000"
 
 [node name="term100" type="ColorRect" parent="terminais"]
 margin_left = 305.0
@@ -213,7 +213,7 @@ margin_left = 4.0
 margin_top = 5.0
 margin_right = 25.0
 margin_bottom = 25.0
-text = "60"
+text = "500"
 
 [node name="term 200" type="ColorRect" parent="terminais"]
 margin_left = 299.0
@@ -241,7 +241,7 @@ margin_left = 4.0
 margin_top = 5.0
 margin_right = 25.0
 margin_bottom = 25.0
-text = "50"
+text = "400"
 
 [node name="term101" type="ColorRect" parent="terminais"]
 margin_left = 296.0
@@ -255,7 +255,7 @@ margin_left = 4.0
 margin_top = 5.0
 margin_right = 25.0
 margin_bottom = 25.0
-text = "100"
+text = "200"
 
 [connection signal="pressed" from="Fios/F_red/Red" to="." method="_on_Red_pressed"]
 [connection signal="pressed" from="Fios/F_yellow/Yellow" to="." method="_on_Yellow_pressed"]

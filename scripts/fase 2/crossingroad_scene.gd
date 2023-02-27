@@ -109,3 +109,8 @@ func _process(delta):
 	# Bloqueia o movimento do personagem além dos limites da tela
 	if $mapa/Personagem.position.x > 360 or $mapa/Personagem.position.x == 0 or $mapa/Personagem.position.y == 0 or $mapa/Personagem.position.y == 640:
 		 $mapa/Personagem.set_position(Vector2(180, 610))
+
+
+
+	
+
