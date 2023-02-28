@@ -5,20 +5,20 @@ var connected = []
 var check = 0
 
 #Variaveis fio vermelho
-var red_wire
-var red_connection
+var redWire
+var redConnection
 
 #Variaveis fio amarelo
-var yellow_wire
-var yellow_connection
+var yellowWire
+var yellowConnection
 
 #Variaveis fio azul
-var blue_wire
-var blue_connection
+var blueWire
+var blueConnection
 
 #Variaveis fio 
-var white_wire
-var white_connection
+var whiteWire
+var whiteConnection
 
 #Avalia se é possivel passar de fase
 var on = []
@@ -78,40 +78,40 @@ func _process(delta):
 	print(on)
 #Determina as conexões do fio vermelho
 func _on_Red_pressed():
-	red_wire = 19
-	connected.append(red_wire)
+	redWire = 19
+	connected.append(redWire)
 	print(connected)
 
 func _on_100_pressed():
-	red_connection = 21
-	connected.append(red_connection)
+	redConnection = 21
+	connected.append(redConnection)
 	print(connected)
 
 #Determina as conexões do fio amarelo
 func _on_Yellow_pressed():
-	yellow_wire = 3
-	connected.append(yellow_wire)
+	yellowWire = 3
+	connected.append(yellowWire)
 	print(connected)
 
 func _on_50_pressed():
-	yellow_connection = 4
-	connected.append(yellow_connection)
+	yellowConnection = 4
+	connected.append(yellowConnection)
 	print(connected)
 
 #Determina as conexões do fio azul
 func _on_Blue_pressed():
-	blue_wire = 53
-	connected.append(blue_wire)
+	blueWire = 53
+	connected.append(blueWire)
 
 func _on_60_pressed():
-	blue_connection = 22
-	connected.append(blue_connection)
+	blueConnection = 22
+	connected.append(blueConnection)
 
 #Determina as conexões do fio branco
 func _on_White_pressed():
-	white_wire = 45
-	connected.append(white_wire)
+	whiteWire = 45
+	connected.append(whiteWire)
 
 func _on_40_pressed():
-	white_connection = 75
-	connected.append(white_connection)
+	whiteConnection = 75
+	connected.append(whiteConnection)
