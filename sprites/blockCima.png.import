@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/block1.png-047e0e4d02f322dfeaa30ce1ab868df9.stex"
+path="res://.import/blockCima.png-7d19dc87054685ccf110210d3712c064.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/block1.png"
-dest_files=[ "res://.import/block1.png-047e0e4d02f322dfeaa30ce1ab868df9.stex" ]
+source_file="res://sprites/blockCima.png"
+dest_files=[ "res://.import/blockCima.png-7d19dc87054685ccf110210d3712c064.stex" ]
 
 [params]
 
