@@ -11,6 +11,7 @@ var finished = false
 var botao = false
 
 func _ready():
+	$PersonagemVtal/AnimationPlayer.play("trutinha_vtal_falando")
 	# Determina velocidaede que o texto aparece na tela
 	$Timer.wait_time = textSpeed
 	dialog = getDialog()
