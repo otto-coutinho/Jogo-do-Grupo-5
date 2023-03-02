@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Mapa frame 2.png-bf4172fc3ce1626255f4f247152757a2.stex"
+path="res://.import/sprite_mapa_1.png-a1a27584aafde09960fbf06040591d78.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Mapa frame 2.png"
-dest_files=[ "res://.import/Mapa frame 2.png-bf4172fc3ce1626255f4f247152757a2.stex" ]
+source_file="res://sprites/sprite_mapa_1.png"
+dest_files=[ "res://.import/sprite_mapa_1.png-a1a27584aafde09960fbf06040591d78.stex" ]
 
 [params]
 
