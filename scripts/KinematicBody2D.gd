@@ -11,6 +11,7 @@ func _process(delta):
 	if keyCard == [1]:
 		get_node("../key/key").position.x = 1000
 		get_node("../key/key").position.y = 1000
+		get_node("../key/KeyCheck").visible = true
 
 func _physics_process(delta):
 	

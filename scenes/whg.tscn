@@ -283,15 +283,26 @@ shape = SubResource( 11 )
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 script = ExtResource( 3 )
 
-[node name="Icon" type="Sprite" parent="KinematicBody2D"]
-position = Vector2( 103.5, 604.5 )
-scale = Vector2( 0.390625, 0.390625 )
+[node name="Icon" type="ColorRect" parent="KinematicBody2D"]
+margin_left = 91.0
+margin_top = 593.0
+margin_right = 115.0
+margin_bottom = 617.0
+color = Color( 1, 0, 0, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 position = Vector2( 103.5, 604.5 )
 shape = SubResource( 9 )
 
 [node name="key" type="Node" parent="."]
+
+[node name="KeyCheck" type="ColorRect" parent="key"]
+visible = false
+margin_left = 302.0
+margin_top = 18.0
+margin_right = 325.0
+margin_bottom = 41.0
+color = Color( 0.921569, 1, 0, 1 )
 
 [node name="key" type="StaticBody2D" parent="key"]
 position = Vector2( 264, 500 )
