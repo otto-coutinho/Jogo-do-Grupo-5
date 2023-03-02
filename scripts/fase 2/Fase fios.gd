@@ -49,27 +49,48 @@ func _process(delta):
 	#Conexão do fio vermelho
 	if check == 40:
 		$Fundo/Connecteds/ConnectRed.visible = true
+		$Fios/F_red/Red.visible = false
+		get_node("terminais/term100/100").visible = false
 		connected.clear()
 		on()
+		
 	#Conexão do fio amarelo
 	if check == 7:
 		$Fundo/Connecteds/ConnectYellow.visible = true
+		$Fios/F_yellow/Yellow.visible = false
+		get_node("terminais/term400/400").visible = false
 		connected.clear()
 		on()
+
 	#Conexão do fio azul
 	if check == 75:
 		$Fundo/Connecteds/ConnectBlue.visible = true
+		$Fios/F_blue/Blue.visible = false
+		get_node("terminais/term500/500").visible = false
 		connected.clear()
 		on()
+		
 	#Conexão do fio branco
-	if check == 120:
+	if check == 232:
 		$Fundo/Connecteds/ConnectWhite.visible = true
+		$Fios/F_white/White.visible = false
+		get_node("terminais/term1GB/1GB").visible = false
 		connected.clear()
 		on()
 	
 	#Passou de fase
 	if correct == 8:
-		get_tree().change_scene("res://scenes/fase 2/pergunta2_2.tscn")
+		get_node("Fundo/Fire").play("run")
+		get_node("Fundo/Fire").visible = true
+		get_node("Fundo/Fire2").play("run")
+		get_node("Fundo/Fire2").visible = true
+		get_node("Fundo/Fire3").play("run")
+		get_node("Fundo/Fire3").visible = true
+		var win = true
+		if win == true:
+			yield(get_tree().create_timer(5), 'timeout')
+			get_tree().change_scene("res://scenes/fase 2/pergunta2_2.tscn")
+		
 		
 	#Garante que os fios sejam apertados na ordem correta
 	if connected.size() == 2:
@@ -93,7 +114,7 @@ func _on_Yellow_pressed():
 	connected.append(yellowWire)
 	print(connected)
 
-func _on_50_pressed():
+func _on_400_pressed():
 	yellowConnection = 4
 	connected.append(yellowConnection)
 	print(connected)
@@ -103,7 +124,7 @@ func _on_Blue_pressed():
 	blueWire = 53
 	connected.append(blueWire)
 
-func _on_60_pressed():
+func _on_500_pressed():
 	blueConnection = 22
 	connected.append(blueConnection)
 
@@ -112,6 +133,6 @@ func _on_White_pressed():
 	whiteWire = 45
 	connected.append(whiteWire)
 
-func _on_40_pressed():
-	whiteConnection = 75
+func _on_1GB_pressed():
+	whiteConnection = 187
 	connected.append(whiteConnection)

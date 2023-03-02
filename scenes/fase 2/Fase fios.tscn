@@ -1,6 +1,195 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://scripts/fase 2/Fase fios.gd" type="Script" id=1]
+[ext_resource path="res://sprites/firework.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 192, 0, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 384, 0, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 576, 0, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 768, 0, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 192, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 192, 192, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 384, 192, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 576, 192, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 768, 192, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 384, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 192, 384, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 384, 384, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 576, 384, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 768, 384, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 576, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 192, 576, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 384, 576, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 576, 576, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 768, 576, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 768, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 192, 768, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 384, 768, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 576, 768, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 768, 768, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 960, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 192, 960, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 384, 960, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 576, 960, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 768, 960, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 1152, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 192, 1152, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 384, 1152, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 576, 1152, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 768, 1152, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 1344, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 192, 1344, 192, 192 )
+
+[sub_resource type="SpriteFrames" id=37]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ) ],
+"loop": true,
+"name": "run",
+"speed": 20.0
+} ]
 
 [node name="Fase fios" type="Node2D"]
 script = ExtResource( 1 )
@@ -66,6 +255,33 @@ margin_left = 15.0
 margin_right = 55.0
 margin_bottom = 14.0
 text = " > 400MB"
+
+[node name="Fire" type="AnimatedSprite" parent="Fundo"]
+visible = false
+position = Vector2( 119, 159 )
+scale = Vector2( 1.29688, 1.28125 )
+frames = SubResource( 37 )
+animation = "run"
+frame = 30
+playing = true
+
+[node name="Fire2" type="AnimatedSprite" parent="Fundo"]
+visible = false
+position = Vector2( 258, 309 )
+scale = Vector2( 1.29688, 1.28125 )
+frames = SubResource( 37 )
+animation = "run"
+frame = 29
+playing = true
+
+[node name="Fire3" type="AnimatedSprite" parent="Fundo"]
+visible = false
+position = Vector2( 81, 414 )
+scale = Vector2( 1.29688, 1.28125 )
+frames = SubResource( 37 )
+animation = "run"
+frame = 28
+playing = true
 
 [node name="corB" type="ColorRect" parent="Fundo"]
 margin_left = 189.0
@@ -187,28 +403,28 @@ margin_bottom = 20.0
 
 [node name="terminais" type="Node" parent="."]
 
-[node name="term40" type="ColorRect" parent="terminais"]
-margin_left = 305.0
+[node name="term1GB" type="ColorRect" parent="terminais"]
+margin_left = 297.0
 margin_top = 115.0
 margin_right = 340.0
 margin_bottom = 145.0
 color = Color( 0.580392, 0.580392, 0.580392, 1 )
 
-[node name="40" type="Button" parent="terminais/term40"]
-margin_left = 4.0
+[node name="1GB" type="Button" parent="terminais/term1GB"]
+margin_left = 2.0
 margin_top = 5.0
-margin_right = 25.0
+margin_right = 41.0
 margin_bottom = 25.0
-text = "1000"
+text = "1GB"
 
-[node name="term100" type="ColorRect" parent="terminais"]
-margin_left = 305.0
+[node name="term500" type="ColorRect" parent="terminais"]
+margin_left = 294.0
 margin_top = 180.0
 margin_right = 340.0
 margin_bottom = 210.0
 color = Color( 0.580392, 0.580392, 0.580392, 1 )
 
-[node name="60" type="Button" parent="terminais/term100"]
+[node name="500" type="Button" parent="terminais/term500"]
 margin_left = 4.0
 margin_top = 5.0
 margin_right = 25.0
@@ -229,28 +445,28 @@ margin_right = 39.0
 margin_bottom = 25.0
 text = "300"
 
-[node name="term60" type="ColorRect" parent="terminais"]
-margin_left = 305.0
+[node name="term400" type="ColorRect" parent="terminais"]
+margin_left = 294.0
 margin_top = 310.0
 margin_right = 340.0
 margin_bottom = 340.0
 color = Color( 0.580392, 0.580392, 0.580392, 1 )
 
-[node name="50" type="Button" parent="terminais/term60"]
+[node name="400" type="Button" parent="terminais/term400"]
 margin_left = 4.0
 margin_top = 5.0
 margin_right = 25.0
 margin_bottom = 25.0
 text = "400"
 
-[node name="term101" type="ColorRect" parent="terminais"]
+[node name="term100" type="ColorRect" parent="terminais"]
 margin_left = 296.0
 margin_top = 375.0
 margin_right = 340.0
 margin_bottom = 405.0
 color = Color( 0.580392, 0.580392, 0.580392, 1 )
 
-[node name="100" type="Button" parent="terminais/term101"]
+[node name="100" type="Button" parent="terminais/term100"]
 margin_left = 4.0
 margin_top = 5.0
 margin_right = 25.0
@@ -261,7 +477,7 @@ text = "200"
 [connection signal="pressed" from="Fios/F_yellow/Yellow" to="." method="_on_Yellow_pressed"]
 [connection signal="pressed" from="Fios/F_blue/Blue" to="." method="_on_Blue_pressed"]
 [connection signal="pressed" from="Fios/F_white/White" to="." method="_on_White_pressed"]
-[connection signal="pressed" from="terminais/term40/40" to="." method="_on_40_pressed"]
-[connection signal="pressed" from="terminais/term100/60" to="." method="_on_60_pressed"]
-[connection signal="pressed" from="terminais/term60/50" to="." method="_on_50_pressed"]
-[connection signal="pressed" from="terminais/term101/100" to="." method="_on_100_pressed"]
+[connection signal="pressed" from="terminais/term1GB/1GB" to="." method="_on_1GB_pressed"]
+[connection signal="pressed" from="terminais/term500/500" to="." method="_on_500_pressed"]
+[connection signal="pressed" from="terminais/term400/400" to="." method="_on_400_pressed"]
+[connection signal="pressed" from="terminais/term100/100" to="." method="_on_100_pressed"]
