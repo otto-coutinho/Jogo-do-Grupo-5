@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/balão.png-15dc1291141ffebb45b023a906c51661.stex"
+path="res://.import/personagem_sprite_2.png-f06b430a2e957dcaca422f64fe97836c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/balão.png"
-dest_files=[ "res://.import/balão.png-15dc1291141ffebb45b023a906c51661.stex" ]
+source_file="res://sprites/personagem_sprite_2.png"
+dest_files=[ "res://.import/personagem_sprite_2.png-f06b430a2e957dcaca422f64fe97836c.stex" ]
 
 [params]
 

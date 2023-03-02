@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/city background.jpg-d6fccf3f7fa40f769e785785364acabb.stex"
+path="res://.import/balão (2).png-2331902c421ce0fe2b92c4f22e4b78a0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/city background.jpg"
-dest_files=[ "res://.import/city background.jpg-d6fccf3f7fa40f769e785785364acabb.stex" ]
+source_file="res://sprites/balão (2).png"
+dest_files=[ "res://.import/balão (2).png-2331902c421ce0fe2b92c4f22e4b78a0.stex" ]
 
 [params]
 
