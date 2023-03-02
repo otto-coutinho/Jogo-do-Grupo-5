@@ -1,7 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://sprites/brasilmap.png" type="Texture" id=1]
 [ext_resource path="res://scripts/menu/main_interface.gd" type="Script" id=2]
+[ext_resource path="res://sprites/Mapa frame 1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/Mapa frame 2.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Mapa"
+length = 1.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ ExtResource( 3 ), ExtResource( 4 ) ]
+}
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -13,12 +32,22 @@ corner_radius_bottom_left = 100
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
 
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 179.775, 319.575 )
+scale = Vector2( 0.07572, 0.121292 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2"]
+anims/Mapa = SubResource( 2 )
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_right = 369.0
 margin_bottom = 637.0
 color = Color( 0.0509804, 0.694118, 0.976471, 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 position = Vector2( 178.175, 290.238 )
 scale = Vector2( 0.819133, 1.12582 )
 texture = ExtResource( 1 )
