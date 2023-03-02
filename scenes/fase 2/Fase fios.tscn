@@ -262,7 +262,7 @@ position = Vector2( 119, 159 )
 scale = Vector2( 1.29688, 1.28125 )
 frames = SubResource( 37 )
 animation = "run"
-frame = 30
+frame = 29
 playing = true
 
 [node name="Fire2" type="AnimatedSprite" parent="Fundo"]
@@ -271,7 +271,7 @@ position = Vector2( 258, 309 )
 scale = Vector2( 1.29688, 1.28125 )
 frames = SubResource( 37 )
 animation = "run"
-frame = 29
+frame = 28
 playing = true
 
 [node name="Fire3" type="AnimatedSprite" parent="Fundo"]
@@ -280,7 +280,7 @@ position = Vector2( 81, 414 )
 scale = Vector2( 1.29688, 1.28125 )
 frames = SubResource( 37 )
 animation = "run"
-frame = 28
+frame = 27
 playing = true
 
 [node name="corB" type="ColorRect" parent="Fundo"]

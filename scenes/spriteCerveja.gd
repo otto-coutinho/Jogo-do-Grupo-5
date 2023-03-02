@@ -6,22 +6,35 @@ var num
 
 
 var andar = Vector2() #movimento
-var velocidade = 100 #velocidade
+var velocidade = 20 #velocidade
 
+
+func _ready():
+	andar.y = 10
 func _physics_process(delta):
-	move_and_slide(andar)
-	if andar.y == 0 and andar.x == 0:
-		num = random.randi_range(1, 4)
-		if num == 1:
-			andar.x = velocidade #direita
-		if num == 2:
-			andar.x = - velocidade #esquerda
-		if num == 3:
-			andar.y = velocidade #baixo
-		if num == 4:
-			andar.y = - velocidade #cima
 	
-#	if collision:
-#		print("I collided with ", collision.collider.name)
-#
+	#var collision = move_and_collide(andar * delta)
+	move_and_slide(andar)
+
+		
+	var collision = move_and_collide(andar * delta)
+	if collision:
+		num = random.randi_range(1, 4)
+		
+		if num == 1:
+			andar.y = 0
+			andar.x = velocidade #direita
+		elif num == 2:
+			andar.y = 0
+			andar.x = - velocidade #esquerda
+		elif num == 3:
+			andar.x = 0
+			andar.y = velocidade #baixo
+		elif num == 4:
+			andar.x = 0
+			andar.y = - velocidade #cima
+			
+
+	
+
 
