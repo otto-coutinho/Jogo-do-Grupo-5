@@ -11,6 +11,9 @@ var finished = false
 var botao = false
 
 func _ready():
+	# Inciar a animação de fala dos personagens
+	$PersonagemVtal/AnimationPlayer.play("trutinha_vtal_falando")
+	$Alex/AnimationPlayer.play("alex_falando")
 	# Determina velocidaede que o texto aparece na tela
 	$Timer.wait_time = textSpeed
 	dialog = getDialog()

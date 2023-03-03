@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/menu/Ajustes.gd" type="Script" id=1]
 [ext_resource path="res://sprites/wallpapermenuprincipal.png" type="Texture" id=2]
+[ext_resource path="res://sprites/retrun_button.png" type="Texture" id=3]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -12,10 +13,12 @@ scale = Vector2( -1.6, 1.6 )
 texture = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = 248.0
-margin_top = 568.0
-margin_right = 328.0
-margin_bottom = 608.0
-text = "Retorno"
+margin_left = 259.0
+margin_top = 544.0
+margin_right = 671.0
+margin_bottom = 950.0
+rect_scale = Vector2( 0.215339, 0.223011 )
+icon = ExtResource( 3 )
+flat = true
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

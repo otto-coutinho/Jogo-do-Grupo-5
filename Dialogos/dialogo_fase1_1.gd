@@ -11,6 +11,9 @@ var finished = false
 var botao = false
 
 func _ready():
+	# Inciar a animação de fala dos personagens
+	$PersonagemVtal/AnimationPlayer.play("trutinha_vtal_falando")
+	$Alex/AnimationPlayer.play("alex_falando")
 	# Determina velocidaede que o texto aparece na tela
 	$Timer.wait_time = textSpeed
 	dialog = getDialog()
@@ -101,7 +104,7 @@ func nextPhrase() -> void:
 
 # Quando o diálogo for finalizado o botão leva para a fase o minigame da fase 1
 func _on_Button_pressed():
-	get_tree().change_scene("res://scenes/fase 1/jogo.tscn")
+	get_tree().change_scene("res://scenes/whg.tscn")
 
 
 

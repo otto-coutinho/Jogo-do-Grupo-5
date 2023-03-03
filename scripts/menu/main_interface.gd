@@ -27,3 +27,7 @@ func _on_Button2_pressed():
 # Botão para voltar para o menu
 func _on_Button4_pressed():
 	get_tree().change_scene("res://scenes/menu/Menu.tscn")
+
+# Botão para ir para a fase 3
+func _on_Button3_pressed():
+	get_tree().change_scene("res://scenes/pacman.tscn")
