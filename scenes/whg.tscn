@@ -10,7 +10,7 @@ extents = Vector2( 8.5, 201.5 )
 extents = Vector2( 70, 8.5 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 54, 8.5 )
+extents = Vector2( 55.7499, 8.5 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 8.5, 56 )
@@ -219,7 +219,7 @@ rotation = 1.5708
 shape = SubResource( 8 )
 
 [node name="parede8" type="StaticBody2D" parent="Walls/parede7"]
-position = Vector2( -299, -8.00108 )
+position = Vector2( -300, -8.00107 )
 rotation = 1.5708
 __meta__ = {
 "_edit_group_": true
@@ -234,7 +234,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/parede7/parede8"]
-position = Vector2( 8.5, 46 )
+position = Vector2( 8.5, 46.7499 )
 rotation = -1.5708
 shape = SubResource( 4 )
 
@@ -254,7 +254,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/parede7/parede9"]
-position = Vector2( 8.5, 46 )
+position = Vector2( 8.50001, 48.4998 )
 rotation = -1.5708
 shape = SubResource( 4 )
 
@@ -305,7 +305,7 @@ margin_bottom = 41.0
 color = Color( 0.921569, 1, 0, 1 )
 
 [node name="key" type="StaticBody2D" parent="key"]
-position = Vector2( 264, 500 )
+position = Vector2( 261, 499 )
 __meta__ = {
 "_edit_group_": true
 }

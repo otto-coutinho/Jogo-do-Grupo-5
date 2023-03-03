@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/fase 2/Dialogos fase 3/dialogo_fase2_2.gd" type="Script" id=1]
 [ext_resource path="res://sprites/trutinha_vtal_1.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://sprites/personagem_sprite_2.png" type="Texture" id=8]
 [ext_resource path="res://Fonte/rainyhearts/rainyhearts.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://Fonte/upheaval/upheavtt.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://sprites/gray_empty_button.png" type="Texture" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "alex_falando"
@@ -44,6 +45,12 @@ tracks/0/keys = {
 "update": 0,
 "values": [ ExtResource( 2 ), ExtResource( 7 ) ]
 }
+
+[sub_resource type="DynamicFont" id=5]
+size = 60
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 10 )
@@ -109,11 +116,24 @@ z_index = -1
 texture = ExtResource( 3 )
 
 [node name="Button" type="Button" parent="ColorRect"]
-margin_left = -23.0
-margin_top = 402.0
-margin_right = 94.0
-margin_bottom = 462.0
-text = "Enter"
+margin_left = 450.0
+margin_top = 305.0
+margin_right = 862.0
+margin_bottom = 711.0
+rect_scale = Vector2( 0.553374, 0.688891 )
+rect_pivot_offset = Vector2( -1185, -65 )
+icon = ExtResource( 11 )
+flat = true
+
+[node name="Label" type="Label" parent="ColorRect/Button"]
+margin_left = 83.0316
+margin_top = 179.409
+margin_right = 341.032
+margin_bottom = 233.409
+custom_colors/font_color = Color( 1, 0.85098, 0.247059, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Começar"
 
 [node name="Name" type="RichTextLabel" parent="ColorRect"]
 modulate = Color( 0, 0, 0, 1 )

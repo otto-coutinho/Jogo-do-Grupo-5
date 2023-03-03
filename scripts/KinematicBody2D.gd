@@ -4,14 +4,19 @@ var move = Vector2()
 var speed = 5000
 var bateu
 
-var keyCard = []
+var keyCard = [0]
 	
 func _process(delta):
 	
+	# A cada keycard pega em um posição ela muda
 	if keyCard == [1]:
-		get_node("../key/key").position.x = 1000
-		get_node("../key/key").position.y = 1000
-		get_node("../key/KeyCheck").visible = true
+		get_node("../key/key").position = Vector2(271, 429)
+#		get_node("../key/KeyCheck").visible = true
+	if keyCard == [2]:
+		get_node("../key/key").position = Vector2(268, 190)
+	if keyCard == [3]:
+		get_node("../key/key").visible = false
+		get_node("../key/key").position = Vector2(560, 381)
 
 func _physics_process(delta):
 	
@@ -35,17 +40,22 @@ func _physics_process(delta):
 	if collision:
 		bateu = collision.collider.name
 		if bateu == 'key':
-			keyCard.append(1)
+			# Adiciona +1 ao valor anterior
+			keyCard[0] += 1
 			print(keyCard)
 
 		elif !(bateu in checkCollision):
 			get_tree().reload_current_scene()
 	
 
+# Quando o player chega no lugar
 func _on_Compliance_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	if keyCard == [1]:
+	if keyCard == [3]:
 		print("Deu certo caralho")
+		get_tree().change_scene("res://Dialogos/dialogo_fase1_2.tscn")
+	else: 
+		print("Folgado, vai pegar a key")
 
-
+# Quando o jogador vai para o lugar errado
 func _on_Area2D_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	print("ruinzão")

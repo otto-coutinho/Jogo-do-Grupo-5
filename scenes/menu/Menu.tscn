@@ -45,8 +45,8 @@ scale = Vector2( 5.62219, 2.07408 )
 script = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 32.016, 149.223 )
-scale = Vector2( 0.0615692, 0.193158 )
+position = Vector2( 32.016, 153.08 )
+scale = Vector2( 0.0615692, 0.197979 )
 texture = ExtResource( 1 )
 
 [node name="Botões" type="Node" parent="."]
