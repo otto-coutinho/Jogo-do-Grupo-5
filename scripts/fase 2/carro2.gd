@@ -13,4 +13,15 @@ func _ready():
 
 # Faz o carro andar tirando uma valor determinado dele
 func _process(delta):
-	position.x += 140 * delta
+	pass
+
+func _physics_process(delta):
+	move.x = 140
+	# Detecta colisões do personagem
+#	move_and_slide(move)
+	var collision = move_and_collide(move * delta)
+	
+	# Se houver uma colisão a cena reinicia
+	if collision:
+		print(collision.collider.name)
+		get_tree().change_scene("res://scenes/fase 2/crossingroad.tscn")

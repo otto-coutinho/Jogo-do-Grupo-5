@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://scenes/pacman.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Black-Pacman-PNG.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://scenes/spriteCerveja.gd" type="Script" id=14]
 [ext_resource path="res://sprites/cerveja-transformed.png" type="Texture" id=15]
 [ext_resource path="res://sprites/firework.png" type="Texture" id=16]
+[ext_resource path="res://sprites/hearts.png" type="Texture" id=17]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( 828, 10 )
@@ -43,6 +44,9 @@ extents = Vector2( 16, 16 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 16, 32 )
+
+[sub_resource type="CircleShape2D" id=50]
+radius = 72.801
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 12.5, 12.5 )
@@ -237,6 +241,66 @@ animations = [ {
 "name": "run",
 "speed": 5.0
 } ]
+
+[sub_resource type="Animation" id=51]
+resource_name = "Lifes1"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+
+[sub_resource type="Animation" id=52]
+resource_name = "Lifes2"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=53]
+resource_name = "Lifes3"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=54]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:vframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 3 ]
+}
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -2790,17 +2854,13 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Person"]
-position = Vector2( 176, 213 )
-scale = Vector2( 0.239683, 0.239683 )
-polygon = PoolVector2Array( 33, -307.7, 87, -299.7, 87, -298.5, 128, -285.5, 128, -284.2, 175, -260.2, 175, -259, 212, -232, 212, -230.9, 256, -183.8, 256, -181.6, 280, -145.6, 280, -143.5, 293, -118.5, 293, -115.4, 304.9, -84, 302, -84, 299, -80, 295.3, -80, 308.741, -75.1001, 308.741, -12.5171, 308.741, 29.2046, 308.741, 70.9268, 287.881, 133.51, 267.02, 154.37, 96.3, 65, 99.1, 65, 108, 66.3, 108, 68.1, 112.7, 72, 115.4, 72, 278, 144.7, 278, 148.4, 271.3, 163, 270, 163, 233, 213, 231.9, 213, 196.8, 246, 195.5, 246, 137.6, 281, 134.4, 281, 89.4, 299, 85.4, 299, 31.2, 309, -20, 309, -20, 307.8, -53, 304.8, -53, 303.5, -101, 291.6, -101, 290.4, -127, 280.4, -127, 279.1, -143.5, 270, -145.2, 270, -146.5, 271.4, -149, 270.3, -149, 269, -181.7, 245, -183.5, 246.4, -186, 245.3, -186, 243.9, -220, 211.9, -220, 209.9, -243, 184.8, -243, 182.6, -269, 143.6, -269, 141.4, -288, 99.4, -288, 95.3, -299, 58.3, -299, 52, -304, 13.1, -304, -11.1, -299.8, -54, -298.7, -54, -292.7, -85, -291.5, -85, -280.5, -120, -279.2, -120, -254.2, -169, -253, -169, -228, -203, -226.8, -203, -194.8, -236, -192.7, -236, -159.7, -262, -157.5, -262, -114.5, -286, -111.4, -286, -69.3, -301, -64.1, -301, -45.3, -306, -38.2, -306, -20, -307.8, -20, -309, 33, -309 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Person"]
+position = Vector2( 175, 215 )
+shape = SubResource( 50 )
 
 [node name="enemies" type="Node" parent="."]
 
-[node name="spriteCerveja" type="KinematicBody2D" parent="enemies"]
+[node name="spriteCerveja" type="KinematicBody2D" parent="enemies" groups=["inimigos"]]
 position = Vector2( 155, 250 )
 script = ExtResource( 14 )
 __meta__ = {
@@ -2822,7 +2882,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="spriteCerveja2" type="KinematicBody2D" parent="enemies"]
+[node name="spriteCerveja2" type="KinematicBody2D" parent="enemies" groups=["inimigos"]]
 position = Vector2( 91, 152 )
 collision_layer = 2
 script = ExtResource( 14 )
@@ -2845,7 +2905,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="spriteCerveja3" type="KinematicBody2D" parent="enemies"]
+[node name="spriteCerveja3" type="KinematicBody2D" parent="enemies" groups=["inimigos"]]
 position = Vector2( 248, 153 )
 collision_layer = 4
 script = ExtResource( 14 )
@@ -2868,7 +2928,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="spriteCerveja4" type="KinematicBody2D" parent="enemies"]
+[node name="spriteCerveja4" type="KinematicBody2D" parent="enemies" groups=["inimigos"]]
 position = Vector2( 344, 437 )
 collision_layer = 16
 script = ExtResource( 14 )
@@ -2908,7 +2968,7 @@ margin_bottom = 8.0
 color = Color( 0, 1, 0.0862745, 1 )
 
 [node name="Capacete2" type="Area2D" parent="good"]
-position = Vector2( 336, 82 )
+position = Vector2( 338, 79 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2961,13 +3021,13 @@ color = Color( 0, 1, 0.0862745, 1 )
 [node name="win" type="Node" parent="."]
 
 [node name="firework" type="AnimatedSprite" parent="win"]
-position = Vector2( 94, 80 )
+position = Vector2( 94, 93 )
 scale = Vector2( 0.770833, 0.78125 )
 frames = SubResource( 49 )
 animation = "run"
 
 [node name="firework2" type="AnimatedSprite" parent="win"]
-position = Vector2( 181, 285 )
+position = Vector2( 174, 288 )
 scale = Vector2( 0.770833, 0.78125 )
 frames = SubResource( 49 )
 animation = "run"
@@ -2989,6 +3049,22 @@ position = Vector2( 262, 541 )
 scale = Vector2( 0.770833, 0.78125 )
 frames = SubResource( 49 )
 animation = "run"
+
+[node name="Hearts" type="Sprite" parent="."]
+position = Vector2( 75, 44 )
+scale = Vector2( 0.19419, 0.0891365 )
+texture = ExtResource( 17 )
+vframes = 3
+frame = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hearts"]
+anims/Lifes1 = SubResource( 51 )
+anims/Lifes2 = SubResource( 52 )
+anims/Lifes3 = SubResource( 53 )
+anims/RESET = SubResource( 54 )
 
 [connection signal="pressed" from="controls/Cima" to="Person" method="_on_Cima_pressed"]
 [connection signal="pressed" from="controls/Baixo" to="Person" method="_on_Baixo_pressed"]
