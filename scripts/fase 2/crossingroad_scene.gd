@@ -1,8 +1,8 @@
 extends Node2D
 
 # Carrega as cenas que estão os carros que aparecem na rua
-#var carScene = preload("res://scenes/fase 2/carro.tscn")
-#var car
+var carScene = preload("res://scenes/fase 2/carro.tscn")
+var car
 
 var carScene2 = preload("res://scenes/fase 2/carro2.tscn")
 var car2
@@ -63,16 +63,16 @@ func _ready():
 	add_child(timer4)
 	timer4.start()
 
-## Faz a instancia (adiciona) da cena do carro 1 nessa cena
-#func car_spaw_1():
-#	car = carScene.instance()
-#	add_child(car)
-#
-#	# Cria um valor aleatório para o tempo
-#	random1 = rand_range(3, 5)
-#
-#	# Determina o valor aleatório criado acima como o intervalo de tempo para o carro aparecer
-#	timer.set_wait_time(random1)
+# Faz a instancia (adiciona) da cena do carro 1 nessa cena
+func car_spaw_1():
+	car = carScene.instance()
+	add_child(car)
+
+	# Cria um valor aleatório para o tempo
+	random1 = rand_range(3, 5)
+
+	# Determina o valor aleatório criado acima como o intervalo de tempo para o carro aparecer
+	timer.set_wait_time(random1)
 
 # Faz a instancia (adiciona) da cena do carro 2 nessa cena
 func car_spaw_2():

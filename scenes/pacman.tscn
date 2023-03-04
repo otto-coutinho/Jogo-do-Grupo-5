@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://scenes/pacman.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Black-Pacman-PNG.png" type="Texture" id=2]
@@ -17,6 +17,11 @@
 [ext_resource path="res://sprites/cerveja-transformed.png" type="Texture" id=15]
 [ext_resource path="res://sprites/firework.png" type="Texture" id=16]
 [ext_resource path="res://sprites/hearts.png" type="Texture" id=17]
+[ext_resource path="res://Fonte/upheaval/upheavtt.ttf" type="DynamicFontData" id=18]
+
+[sub_resource type="DynamicFont" id=55]
+size = 28
+font_data = ExtResource( 18 )
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( 828, 10 )
@@ -304,6 +309,15 @@ tracks/0/keys = {
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="texto final" type="Label" parent="."]
+visible = false
+margin_left = 90.0
+margin_top = 135.0
+margin_right = 411.0
+margin_bottom = 234.0
+custom_fonts/font = SubResource( 55 )
+text = "Você é foda!!!!"
 
 [node name="walls" type="Node" parent="."]
 

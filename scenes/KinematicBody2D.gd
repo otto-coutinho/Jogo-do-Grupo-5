@@ -29,6 +29,7 @@ func _process(delta):
 	# Para vencer o jogo é preciso coletar os itens bons
 	if coletaveis[0] == 4:
 		print("Você é foda")
+		get_node("../texto final").visible = true
 	
 	# Código que configura a vida do player
 	if vida == 3:
