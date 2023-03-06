@@ -19,7 +19,8 @@ func _physics_process(delta):
 		
 	var collision = move_and_collide(andar * delta)
 	if collision:
-		num = random.randi_range(1, 4)
+		num = int(rand_range(1, 4))
+		print(num)
 		
 		if num == 1:
 			andar.y = 0
