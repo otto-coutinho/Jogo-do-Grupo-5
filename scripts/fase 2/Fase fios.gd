@@ -1,5 +1,8 @@
 extends Node2D
 
+var erro = Color(1, 0, 0, 1)
+var errosCheck = []
+
 var connections = []
 var connected = []
 var check = 0
@@ -30,6 +33,9 @@ static func sum(array):
 		sum+= element
 	return sum
 	
+func wrong():
+	errosCheck.append(17)
+	
 #Sempre que chamada, significa que a pessoa está mais perto de passar de fase
 func on():
 	on.append(2)
@@ -40,6 +46,7 @@ func _ready():
 	
 func _process(delta):
 	
+	print(errosCheck)
 	#Soma da lista connected para causar a conexão dos fios
 	check = sum(connected)
 	
@@ -77,6 +84,82 @@ func _process(delta):
 		get_node("terminais/term1GB/1GB").visible = false
 		connected.clear()
 		on()
+		
+	#Conexões incorretas
+	#Vermelho - 1GB
+	if check == 206:
+		wrong()
+		
+	#Vermelho - 500
+	if check == 41:
+		wrong()
+
+	#Vermelho - 300
+	if check == 1019:
+		wrong()
+	
+	#Vermelho - 400
+	if check == 23:
+		wrong()
+		
+	#Amarelo - 1GB
+	if check == 190:
+		wrong()
+	
+	if check == 25:
+		wrong()
+	
+	if check == 24:
+		wrong()
+		
+	if check == 1003:
+		wrong()
+		
+	if check == 74:
+		wrong()
+	
+	if check == 57:
+		wrong()
+	
+	if check == 240:
+		wrong()
+
+	if check == 1053:
+		wrong()
+	
+	 #erros branco
+	if check == 66:
+		wrong()
+		
+	if check == 49:
+		wrong()
+		
+	if check == 67:
+		wrong()
+		
+	if check == 232:
+		wrong()
+	
+	if check == 1045:
+		wrong()
+
+	#visualização do erro
+	if sum(errosCheck) == 17:
+		$erros/vida11.color = erro
+		$erros/vida12.color = erro
+	
+	if sum(errosCheck) == 34:
+		$erros/vida21.color = erro
+		$erros/vida22.color = erro
+		
+	if sum(errosCheck) == 51:
+		$erros/vida31.color = erro
+		$erros/vida32.color = erro
+		
+	if sum(errosCheck) == 68:
+		$Again/AgainButton.visible = true
+		$Again/AgainFundo.visible = true
+		$Again/AgainText.visible = true
 	
 	#Passou de fase
 	if correct == 8:
@@ -136,3 +219,11 @@ func _on_White_pressed():
 func _on_1GB_pressed():
 	whiteConnection = 187
 	connected.append(whiteConnection)
+
+#conexão 300(sem fio aparente)
+func _on_300_pressed():
+	connected.append(1000)
+
+#Tentar novamente
+func _on_AgainButton_pressed():
+	get_tree().reload_current_scene()
