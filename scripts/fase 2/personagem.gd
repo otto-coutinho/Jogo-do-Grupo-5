@@ -68,8 +68,3 @@ func _on_casa_body_entered(body):
 	if Points.crossingroad == false:
 		Points.addpoint()
 		Points.crossingroad = true
-
-
-
-
-
