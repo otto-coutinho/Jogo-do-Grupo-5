@@ -97,6 +97,37 @@ flat = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
+[node name="Container" type="Container" parent="."]
+margin_right = 361.0
+margin_bottom = 38.0
+
+[node name="ColorRect2" type="ColorRect" parent="Container"]
+margin_right = 361.0
+margin_bottom = 37.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="Container"]
+margin_left = 251.0
+margin_top = 7.0
+margin_right = 346.0
+margin_bottom = 30.0
+color = Color( 0.247059, 0.247059, 0.247059, 1 )
+
+[node name="ColorRect4" type="ColorRect" parent="Container"]
+margin_left = 254.0
+margin_top = 11.0
+margin_right = 269.0
+margin_bottom = 26.0
+color = Color( 0.101961, 0.901961, 0.0352941, 1 )
+
+[node name="score" type="Label" parent="Container"]
+margin_left = 275.0
+margin_top = 12.0
+margin_right = 315.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0 pts"
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
