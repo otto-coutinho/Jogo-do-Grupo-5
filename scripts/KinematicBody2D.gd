@@ -7,7 +7,6 @@ var bateu
 var keyCard = [0]
 	
 func _process(delta):
-	
 	# A cada keycard pega em um posição ela muda
 	if keyCard == [1]:
 		get_node("../key/key").position = Vector2(271, 429)
@@ -35,7 +34,7 @@ func _physics_process(delta):
 	move_and_slide(move)
 
 	var collision = move_and_collide(move * delta)
-	var checkCollision = ['parede1','parede2','parede3','parede4','parede5','parede6','parede7','parede8','parede9','parede10', 'parede11','key']
+	var checkCollision = ['parede1','parede2','parede3','parede4','parede5','parede6','parede7','parede8','parede9','parede10', 'parede11','parede12','parede13','parede14','key']
 	
 	if collision:
 		bateu = collision.collider.name
@@ -46,6 +45,7 @@ func _physics_process(delta):
 
 		elif !(bateu in checkCollision):
 			get_tree().reload_current_scene()
+			print(bateu)
 	
 
 # Quando o player chega no lugar

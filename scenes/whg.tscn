@@ -1,31 +1,35 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
+[ext_resource path="res://sprites/Mapa TWHG.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Node2D.gd" type="Script" id=2]
 [ext_resource path="res://scripts/KinematicBody2D.gd" type="Script" id=3]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8.5, 201.5 )
-
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 70, 8.5 )
+extents = Vector2( 132.5, 8.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.5, 283.5 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 55.7499, 8.5 )
+extents = Vector2( 34.4999, 32.0001 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 8.5, 56 )
+extents = Vector2( 7.4431, 56 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 8.5, 99.5 )
+extents = Vector2( 19, 320.5 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 79, 8.5 )
+extents = Vector2( 71.5, 18.9998 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 35.5, 8.5 )
+extents = Vector2( 42.75, 33.75 )
 
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 8.5, 8.75003 )
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 44, 33.5 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 14, 47.25 )
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 12, 12 )
@@ -34,15 +38,16 @@ extents = Vector2( 12, 12 )
 extents = Vector2( 5, 4.5 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 34, 8.5 )
+extents = Vector2( 26, 25 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 31.5, 8.5 )
+extents = Vector2( 24, 17.5 )
 
 [node name="WHG" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_right = 360.0
 margin_bottom = 640.0
 color = Color( 0.807843, 0.807843, 0.807843, 1 )
@@ -50,64 +55,54 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Walls" type="Node" parent="."]
-
-[node name="ColorRect2" type="ColorRect" parent="Walls"]
-margin_left = 303.0
-margin_top = 437.0
-margin_right = 320.0
-margin_bottom = 454.0
-
-[node name="ColorRect3" type="ColorRect" parent="Walls"]
-margin_left = 42.0
-margin_top = 528.0
-margin_right = 59.0
-margin_bottom = 545.0
-
-[node name="parede1" type="StaticBody2D" parent="Walls"]
-position = Vector2( 42, 428 )
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 179.5, 322 )
+scale = Vector2( 0.798658, 0.917143 )
+texture = ExtResource( 1 )
 __meta__ = {
-"_edit_group_": true
+"_edit_lock_": true
 }
 
-[node name="ColorRect" type="ColorRect" parent="Walls/parede1"]
-margin_top = -303.0
-margin_right = 17.0
-margin_bottom = 100.0
+[node name="Walls" type="Node" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/parede1"]
-position = Vector2( 8.5, -101.5 )
-shape = SubResource( 2 )
-
-[node name="parede2" type="StaticBody2D" parent="Walls"]
-position = Vector2( 135, 545 )
+[node name="parede10" type="StaticBody2D" parent="Walls"]
+position = Vector2( 179, 51 )
 rotation = -1.5708
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="ColorRect" type="ColorRect" parent="Walls/parede2"]
-margin_top = 9.0
-margin_right = 17.0
-margin_bottom = 168.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/parede2"]
-position = Vector2( 8.5, 97 )
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/parede10"]
+position = Vector2( -0.499634, -3.05176e-05 )
 rotation = 1.5708
 shape = SubResource( 3 )
 
-[node name="parede3" type="StaticBody2D" parent="Walls"]
-position = Vector2( 303, 445 )
+[node name="parede1" type="StaticBody2D" parent="Walls"]
+position = Vector2( 30, 366 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="ColorRect" type="ColorRect" parent="Walls/parede3"]
-margin_top = 9.0
-margin_right = 17.0
-margin_bottom = 100.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/parede1"]
+position = Vector2( 12.5, -39.5 )
+shape = SubResource( 2 )
+
+[node name="parede2" type="StaticBody2D" parent="Walls"]
+position = Vector2( 18, 601 )
+rotation = -1.5708
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/parede2"]
+position = Vector2( 8.49969, 159.5 )
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="parede3" type="StaticBody2D" parent="Walls"]
+position = Vector2( 277, 267 )
+__meta__ = {
+"_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/parede3"]
@@ -116,21 +111,15 @@ rotation = -1.5708
 shape = SubResource( 4 )
 
 [node name="parede4" type="StaticBody2D" parent="Walls"]
-position = Vector2( 129, 112 )
+position = Vector2( 91, 156 )
+rotation = -1.56557
+scale = Vector2( 2.21713, 1.28688 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="ColorRect" type="ColorRect" parent="Walls/parede4"]
-margin_top = 13.0
-margin_right = 17.0
-margin_bottom = 125.0
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/parede4"]
-position = Vector2( 8.5, 69 )
+position = Vector2( 7.64594, 68.9999 )
 shape = SubResource( 5 )
 
 [node name="parede8" type="StaticBody2D" parent="Walls"]
@@ -139,68 +128,39 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="ColorRect" type="ColorRect" parent="Walls/parede8"]
-margin_top = 13.0
-margin_right = 17.0
-margin_bottom = 125.0
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/parede8"]
 position = Vector2( 8.5, 69 )
 shape = SubResource( 5 )
 
 [node name="parede11" type="StaticBody2D" parent="Walls"]
-position = Vector2( 218, 112 )
+position = Vector2( 245, 205 )
 __meta__ = {
 "_edit_group_": true
-}
-
-[node name="ColorRect" type="ColorRect" parent="Walls/parede11"]
-margin_top = 13.0
-margin_right = 17.0
-margin_bottom = 125.0
-__meta__ = {
-"_edit_use_anchors_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/parede11"]
-position = Vector2( 8.5, 69 )
+position = Vector2( 13, 69 )
 shape = SubResource( 5 )
 
 [node name="parede5" type="StaticBody2D" parent="Walls"]
-position = Vector2( 303, 228 )
+position = Vector2( 332, 296 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="ColorRect" type="ColorRect" parent="Walls/parede5"]
-margin_top = 9.0
-margin_right = 17.0
-margin_bottom = 209.0
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/parede5"]
-position = Vector2( 8.5, 109.5 )
+position = Vector2( -5, 62.5 )
 shape = SubResource( 6 )
 
 [node name="parede6" type="StaticBody2D" parent="Walls"]
-position = Vector2( 50, 338 )
+position = Vector2( 41, 258 )
 rotation = -1.5708
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="ColorRect" type="ColorRect" parent="Walls/parede6"]
-margin_top = 9.0
-margin_right = 17.0
-margin_bottom = 168.0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/parede6"]
-position = Vector2( 8.5, 89 )
+position = Vector2( 18.9999, 81.5001 )
 rotation = 1.5708
 shape = SubResource( 7 )
 
@@ -208,29 +168,16 @@ shape = SubResource( 7 )
 position = Vector2( 152, 237 )
 rotation = -1.5708
 
-[node name="ColorRect" type="ColorRect" parent="Walls/parede7"]
-margin_top = -6.0
-margin_right = 17.0
-margin_bottom = 82.0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/parede7"]
-position = Vector2( 8.50023, 29.5 )
+position = Vector2( -116.25, -0.750427 )
 rotation = 1.5708
 shape = SubResource( 8 )
 
 [node name="parede8" type="StaticBody2D" parent="Walls/parede7"]
-position = Vector2( -300, -8.00107 )
+position = Vector2( -74.0004, 119 )
 rotation = 1.5708
 __meta__ = {
 "_edit_group_": true
-}
-
-[node name="ColorRect" type="ColorRect" parent="Walls/parede7/parede8"]
-margin_top = 9.0
-margin_right = 17.0
-margin_bottom = 100.0
-__meta__ = {
-"_edit_use_anchors_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/parede7/parede8"]
@@ -239,59 +186,43 @@ rotation = -1.5708
 shape = SubResource( 4 )
 
 [node name="parede9" type="StaticBody2D" parent="Walls/parede7"]
-position = Vector2( -299, -110.001 )
+position = Vector2( -211, -66.0008 )
 rotation = 1.5708
 __meta__ = {
 "_edit_group_": true
-}
-
-[node name="ColorRect" type="ColorRect" parent="Walls/parede7/parede9"]
-margin_top = 9.0
-margin_right = 17.0
-margin_bottom = 100.0
-__meta__ = {
-"_edit_use_anchors_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/parede7/parede9"]
-position = Vector2( 8.50001, 48.4998 )
+position = Vector2( -10, 35.5 )
 rotation = -1.5708
 shape = SubResource( 4 )
 
-[node name="parede10" type="StaticBody2D" parent="Walls/parede7/parede9"]
-position = Vector2( 190, -74 )
-rotation = -1.5708
-__meta__ = {
-"_edit_group_": true
-}
+[node name="parede12" type="StaticBody2D" parent="Walls"]
 
-[node name="ColorRect2" type="ColorRect" parent="Walls/parede7/parede9/parede10"]
-margin_left = -8.99963
-margin_top = -88.0
-margin_right = 8.00037
-margin_bottom = 71.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/parede12"]
+position = Vector2( 207, 484.5 )
+shape = SubResource( 13 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/parede7/parede9/parede10"]
-position = Vector2( -0.499634, -3.05176e-05 )
-rotation = 1.5708
-shape = SubResource( 3 )
+[node name="parede13" type="StaticBody2D" parent="Walls"]
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls/parede7/parede9/parede10"]
-position = Vector2( -0.499695, -79.25 )
-shape = SubResource( 11 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/parede13"]
+position = Vector2( 180, 429.75 )
+shape = SubResource( 14 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+collision_layer = 3
+collision_mask = 11
 script = ExtResource( 3 )
 
 [node name="Icon" type="ColorRect" parent="KinematicBody2D"]
-margin_left = 91.0
-margin_top = 593.0
-margin_right = 115.0
-margin_bottom = 617.0
+margin_left = 84.0
+margin_top = 536.0
+margin_right = 108.0
+margin_bottom = 560.0
 color = Color( 1, 0, 0, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( 103.5, 604.5 )
+position = Vector2( 96, 548 )
 shape = SubResource( 9 )
 
 [node name="key" type="Node" parent="."]
@@ -327,29 +258,24 @@ shape = SubResource( 10 )
 position = Vector2( 101, 133 )
 
 [node name="ColorRect2" type="ColorRect" parent="areas/Compliance"]
-margin_left = -42.0
-margin_top = -8.0
-margin_right = 28.0
-margin_bottom = 9.0
+margin_left = 37.0
+margin_top = -71.0
+margin_right = 93.0
+margin_bottom = -15.0
 color = Color( 0.12549, 1, 0, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areas/Compliance"]
-position = Vector2( -7, 0.5 )
+position = Vector2( 65, -42 )
 shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="areas"]
-position = Vector2( 235, 125 )
+position = Vector2( 235, 103 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="ColorRect" type="ColorRect" parent="areas/Area2D"]
-margin_right = 68.0
-margin_bottom = 17.0
-color = Color( 1, 0, 0, 1 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areas/Area2D"]
-position = Vector2( 33.5, 8.5 )
+position = Vector2( 44, -0.5 )
 shape = SubResource( 12 )
 
 [connection signal="body_shape_entered" from="areas/Compliance" to="KinematicBody2D" method="_on_Compliance_body_shape_entered"]

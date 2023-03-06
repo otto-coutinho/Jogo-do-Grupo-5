@@ -9,5 +9,5 @@ func obstacle():
 	
 func _ready():
 	obstacle()
-	
+	pass
 	

@@ -4,20 +4,20 @@ var move = Vector2()
 var speed = 30
 
 func _ready():
-	set_position(Vector2(270,290))
+	set_position(Vector2(276,408))
 	set_z_index(1)
 	
 
 func _physics_process(delta):
 	
-	if position.x == 270:
-		move.x = - speed
-	if position.x == 84:
+	if position.x == 276:
 		move.x = speed
-	if position.y == 290:
-		move.y = -15
-	if position.y == 260:
-		move.y = +15
+	if position.x == 276 + 14:
+		move.x = - speed
+	if position.y == 408:
+		move.y = speed
+	if position.y == 408 + 140:
+		move.y = - speed
 
 	move_and_slide(move)
 
