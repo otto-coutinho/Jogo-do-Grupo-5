@@ -17,6 +17,7 @@ func _physics_process(delta):
 	move_and_slide(andar)
 
 		
+	random.randomize()
 	var collision = move_and_collide(andar * delta)
 	if collision:
 		num = random.randi_range(1, 4)

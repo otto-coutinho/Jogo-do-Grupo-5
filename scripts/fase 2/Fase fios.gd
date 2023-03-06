@@ -137,8 +137,6 @@ func _process(delta):
 	if check == 67:
 		wrong()
 		
-	if check == 232:
-		wrong()
 	
 	if check == 1045:
 		wrong()
@@ -169,10 +167,12 @@ func _process(delta):
 		get_node("Fundo/Fire2").visible = true
 		get_node("Fundo/Fire3").play("run")
 		get_node("Fundo/Fire3").visible = true
-		var win = true
-		if win == true:
-			yield(get_tree().create_timer(5), 'timeout')
-			get_tree().change_scene("res://scenes/fase 2/pergunta2_2.tscn")
+		yield(get_tree().create_timer(5), 'timeout')
+		get_tree().change_scene("res://scenes/fase 2/pergunta2_2.tscn")
+		
+		if Points.fios == false:
+			Points.addpoint()
+			Points.fios == true
 		
 		
 	#Garante que os fios sejam apertados na ordem correta

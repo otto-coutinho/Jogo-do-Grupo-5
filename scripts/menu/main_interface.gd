@@ -1,21 +1,14 @@
 extends Node2D
+var points
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
 	$Sprite2/AnimationPlayer.play("Mapa")
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+	
+	points = get_node("/root/Points")
+	
+func _process(delta):
+	$Container/score.text = str(Points.points) + " pts"
+	
 # Botão para ir para a fase 1
 func _on_Button_pressed():
 	get_tree().change_scene("res://Dialogos/dialogo_fase1_1.tscn")
