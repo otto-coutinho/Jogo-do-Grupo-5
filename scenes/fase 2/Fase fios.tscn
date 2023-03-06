@@ -262,7 +262,7 @@ position = Vector2( 119, 159 )
 scale = Vector2( 1.29688, 1.28125 )
 frames = SubResource( 37 )
 animation = "run"
-frame = 29
+frame = 31
 playing = true
 
 [node name="Fire2" type="AnimatedSprite" parent="Fundo"]
@@ -271,7 +271,7 @@ position = Vector2( 258, 309 )
 scale = Vector2( 1.29688, 1.28125 )
 frames = SubResource( 37 )
 animation = "run"
-frame = 28
+frame = 30
 playing = true
 
 [node name="Fire3" type="AnimatedSprite" parent="Fundo"]
@@ -280,7 +280,7 @@ position = Vector2( 81, 414 )
 scale = Vector2( 1.29688, 1.28125 )
 frames = SubResource( 37 )
 animation = "run"
-frame = 27
+frame = 29
 playing = true
 
 [node name="corB" type="ColorRect" parent="Fundo"]
@@ -351,6 +351,56 @@ margin_top = 384.0
 margin_right = 418.0
 margin_bottom = 400.0
 rect_rotation = -44.5892
+
+[node name="erros" type="Node" parent="."]
+
+[node name="vida11" type="ColorRect" parent="erros"]
+margin_left = 183.0
+margin_top = 441.0
+margin_right = 192.0
+margin_bottom = 498.0
+rect_rotation = -30.0
+color = Color( 0.137255, 0.137255, 0.137255, 1 )
+
+[node name="vida12" type="ColorRect" parent="erros"]
+margin_left = 213.0
+margin_top = 436.0
+margin_right = 222.0
+margin_bottom = 496.0
+rect_rotation = 30.0
+color = Color( 0.137255, 0.137255, 0.137255, 1 )
+
+[node name="vida21" type="ColorRect" parent="erros"]
+margin_left = 243.0
+margin_top = 440.0
+margin_right = 252.0
+margin_bottom = 497.0
+rect_rotation = -30.0
+color = Color( 0.137255, 0.137255, 0.137255, 1 )
+
+[node name="vida22" type="ColorRect" parent="erros"]
+margin_left = 273.0
+margin_top = 435.0
+margin_right = 282.0
+margin_bottom = 495.0
+rect_rotation = 30.0
+color = Color( 0.137255, 0.137255, 0.137255, 1 )
+
+[node name="vida31" type="ColorRect" parent="erros"]
+margin_left = 303.0
+margin_top = 440.0
+margin_right = 312.0
+margin_bottom = 497.0
+rect_rotation = -30.0
+color = Color( 0.137255, 0.137255, 0.137255, 1 )
+
+[node name="vida32" type="ColorRect" parent="erros"]
+margin_left = 333.0
+margin_top = 435.0
+margin_right = 342.0
+margin_bottom = 495.0
+rect_rotation = 30.0
+color = Color( 0.137255, 0.137255, 0.137255, 1 )
 
 [node name="Fios" type="Node" parent="."]
 
@@ -473,11 +523,40 @@ margin_right = 25.0
 margin_bottom = 25.0
 text = "200"
 
+[node name="Again" type="Node" parent="."]
+
+[node name="AgainFundo" type="ColorRect" parent="Again"]
+visible = false
+margin_left = 21.0
+margin_top = 156.0
+margin_right = 339.0
+margin_bottom = 267.0
+
+[node name="AgainText" type="Label" parent="Again"]
+visible = false
+margin_left = 111.0
+margin_top = 165.0
+margin_right = 261.0
+margin_bottom = 192.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Tentar novamente?"
+
+[node name="AgainButton" type="Button" parent="Again"]
+visible = false
+margin_left = 108.0
+margin_top = 201.0
+margin_right = 240.0
+margin_bottom = 237.0
+text = "Sim"
+
 [connection signal="pressed" from="Fios/F_red/Red" to="." method="_on_Red_pressed"]
 [connection signal="pressed" from="Fios/F_yellow/Yellow" to="." method="_on_Yellow_pressed"]
 [connection signal="pressed" from="Fios/F_blue/Blue" to="." method="_on_Blue_pressed"]
 [connection signal="pressed" from="Fios/F_white/White" to="." method="_on_White_pressed"]
 [connection signal="pressed" from="terminais/term1GB/1GB" to="." method="_on_1GB_pressed"]
 [connection signal="pressed" from="terminais/term500/500" to="." method="_on_500_pressed"]
+[connection signal="pressed" from="terminais/term 200/300" to="." method="_on_300_pressed"]
 [connection signal="pressed" from="terminais/term400/400" to="." method="_on_400_pressed"]
 [connection signal="pressed" from="terminais/term100/100" to="." method="_on_100_pressed"]
+[connection signal="pressed" from="Again/AgainButton" to="." method="_on_AgainButton_pressed"]
