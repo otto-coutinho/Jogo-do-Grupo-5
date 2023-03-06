@@ -28,9 +28,13 @@ func _on_Esquerda_pressed():
 func _process(delta):
 	# Para vencer o jogo é preciso coletar os itens bons
 	if coletaveis[0] == 4:
-		print("Você é foda")
 		get_node("../texto final").visible = true
-	
+		if Points.pacMan == false:
+			Points.addpoint()
+			Points.pacMan == true
+		yield(get_tree().create_timer(5), 'timeout')
+		get_tree().change_scene("res://scenes/menu/main_interface.tscn")
+	print(Points.points)
 	# Código que configura a vida do player
 	if vida == 3:
 		get_node("../Hearts/AnimationPlayer").play("Lifes3")

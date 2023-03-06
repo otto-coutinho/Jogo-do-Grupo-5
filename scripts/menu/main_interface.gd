@@ -3,10 +3,11 @@ var points
 
 func _ready():
 	$Sprite2/AnimationPlayer.play("Mapa")
+	
 	points = get_node("/root/Points")
 	
 func _process(delta):
-	$Container/score.text = str(points.point)
+	$Container/score.text = str(Points.points) + " pts"
 	
 # Botão para ir para a fase 1
 func _on_Button_pressed():
