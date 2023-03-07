@@ -80,9 +80,9 @@ texture = ExtResource( 2 )
 anims/trutinha_vtal_falando = SubResource( 1 )
 
 [node name="balaodefalaVtal" type="Sprite" parent="ColorRect"]
-position = Vector2( -17, 78 )
+position = Vector2( -17.0368, 27.5019 )
 rotation = -0.000728968
-scale = Vector2( -1.1896, 0.938553 )
+scale = Vector2( -1.1896, 1.25417 )
 z_index = -1
 texture = ExtResource( 4 )
 
@@ -108,19 +108,19 @@ text = "Começar"
 [node name="Name" type="RichTextLabel" parent="ColorRect"]
 modulate = Color( 0, 0, 0, 1 )
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = -109.0
-margin_top = 11.0
-margin_right = 75.0
-margin_bottom = 48.0
+margin_left = -117.0
+margin_top = -72.0
+margin_right = 67.0
+margin_bottom = -35.0
 custom_fonts/normal_font = SubResource( 2 )
 
 [node name="Text" type="RichTextLabel" parent="ColorRect"]
 modulate = Color( 0, 0, 0, 1 )
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = -112.0
-margin_top = 46.0
+margin_top = -25.0
 margin_right = 112.0
-margin_bottom = 154.0
+margin_bottom = 133.0
 custom_fonts/normal_font = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="ColorRect"]

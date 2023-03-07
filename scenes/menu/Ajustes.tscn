@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/menu/Ajustes.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Ajustes_background.png" type="Texture" id=2]
-[ext_resource path="res://sprites/retrun_button.png" type="Texture" id=3]
+[ext_resource path="res://sprites/voltar__360.png" type="Texture" id=3]
 [ext_resource path="res://audios/videoplayback.mp3" type="AudioStream" id=4]
 
 [node name="Node2D" type="Node2D"]
@@ -17,11 +17,11 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 259.0
-margin_top = 544.0
-margin_right = 671.0
-margin_bottom = 950.0
-rect_scale = Vector2( 0.215339, 0.223011 )
+margin_left = 282.0
+margin_top = 560.0
+margin_right = 486.0
+margin_bottom = 758.0
+rect_scale = Vector2( 0.330872, 0.342661 )
 icon = ExtResource( 3 )
 flat = true
 
